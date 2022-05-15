@@ -15,6 +15,7 @@ const Body = () => {
       })
       .catch((error) => {
         console.error(error);
+        setReturnData("Backend Error");
       });
   }, []);
 
