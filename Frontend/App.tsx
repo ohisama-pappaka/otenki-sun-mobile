@@ -1,35 +1,14 @@
 import React from "react";
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-  View,
-} from "react-native";
-import { Colors, Header } from "react-native/Libraries/NewAppScreen";
+import { TailwindProvider } from "tailwind-rn";
+import utilities from "./tailwind.json";
 
-import Body from "./src/components/body/body";
+import Main from "./src/Main";
 
-const App = () => {
-  const isDarkMode = useColorScheme() === "dark";
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}
-      >
-        <View>
-          <Body />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+const App = () => (
+  // XXX: Error を出してるが解消方法がわからない。ただ普通に動く
+  <TailwindProvider utilities={utilities}>
+    <Main />
+  </TailwindProvider>
+);
 
 export default App;
