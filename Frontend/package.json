@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "format": "prettier --write ./src/**/*.{ts,tsx}",
     "build:tailwind": "tailwindcss --input input.css --output tailwind.css --no-autoprefixer && tailwind-rn",
-    "dev:tailwind": "concurrently \"tailwindcss --input input.css --output tailwind.css --no-autoprefixer --watch\" \"tailwind-rn --watch\""
+    "dev:tailwind": "concurrently \"tailwindcss --input input.css --output tailwind.css --no-autoprefixer --watch\" \"tailwind-rn --watch\"",
+    "css": "tailwindcss --input input.css --output tailwind.css --no-autoprefixer && tailwind-rn && prettier --write ./src/**/*.{ts,tsx}"
   },
   "dependencies": {
     "axios": "^0.27.2",
