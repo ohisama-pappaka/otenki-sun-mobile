@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Button, Text, TextInput, View } from "react-native";
-import axios from "axios";
+import { Text, TextInput, View } from "react-native";
+import { Calendar } from "react-native-calendars";
 import { useTailwind } from "tailwind-rn";
+import axios from "axios";
 
 const Body = () => {
   const tailwind = useTailwind();
@@ -59,6 +60,9 @@ const Body = () => {
           />
         </View>
       </View>
+
+      {/* カレンダーの導入実験  */}
+      <Calendar />
     </>
   );
 };
