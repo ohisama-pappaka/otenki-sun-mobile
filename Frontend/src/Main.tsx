@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
+import Header from "./components/header/Header";
 import Body from "./components/body/Body";
 
 const Main = () => {
@@ -23,6 +24,7 @@ const Main = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}
       >
+        <Header />
         <Body />
       </ScrollView>
     </SafeAreaView>
