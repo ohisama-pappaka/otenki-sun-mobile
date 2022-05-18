@@ -9,6 +9,7 @@ import { Colors } from "react-native/Libraries/NewAppScreen";
 
 import Header from "src/components/header/Header";
 import Body from "src/components/body/Body";
+import Footer from "src/components/footer/Footer";
 
 const Main = () => {
   const isDarkMode = useColorScheme() === "dark";
@@ -26,6 +27,7 @@ const Main = () => {
       >
         <Header />
         <Body />
+        <Footer />
       </ScrollView>
     </SafeAreaView>
   );
