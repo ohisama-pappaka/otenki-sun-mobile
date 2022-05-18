@@ -4,6 +4,7 @@ import {
   ScrollView,
   StatusBar,
   useColorScheme,
+  View,
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
@@ -25,9 +26,18 @@ const Main = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}
       >
-        <Header />
-        <Body />
-        <Footer />
+        <View style={{ height: 789 }}>
+          <View style={{ flex: 1 }}>
+            <Header />
+          </View>
+          {/* FIXME: 現状 Body の要素が増えると途中で見切れてしまう */}
+          <View style={{ flex: 10 }}>
+            <Body />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Footer />
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
