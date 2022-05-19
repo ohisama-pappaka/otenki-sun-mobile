@@ -3,19 +3,17 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
+  Text,
   useColorScheme,
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
-import Body from "./components/body/Body";
-
-const Main = () => {
+const PointRegistration = () => {
   const isDarkMode = useColorScheme() === "dark";
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
@@ -23,10 +21,10 @@ const Main = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}
       >
-        <Body />
+        <Text>遷移したよ！</Text>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default Main;
+export default PointRegistration;
