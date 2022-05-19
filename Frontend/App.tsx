@@ -4,8 +4,11 @@ import { TailwindProvider } from "tailwind-rn";
 import utilities from "./tailwind";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Main from "src/Main";
-import SettingTime from "src/SettingTime";
+
+import Home from "src/page/Home";
+import DateRegistration from "src/page/DateRegistration";
+import PointRegistration from "src/page/PointRegistration";
+import Others from "src/page/Others";
 
 const Stack = createStackNavigator();
 
@@ -13,9 +16,11 @@ const App = () => (
   // XXX: Error を出してるが解消方法がわからない。ただ普通に動く
   <TailwindProvider utilities={utilities}>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main">
-        <Stack.Screen name="Main" component={Main} />
-        <Stack.Screen name="SettingTime" component={SettingTime} />
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="DateRegistration" component={DateRegistration} />
+        <Stack.Screen name="PointRegistration" component={PointRegistration} />
+        <Stack.Screen name="Others" component={Others} />
       </Stack.Navigator>
     </NavigationContainer>
   </TailwindProvider>

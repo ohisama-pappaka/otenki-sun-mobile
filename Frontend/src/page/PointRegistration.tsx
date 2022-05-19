@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
-const SettingTime = () => {
+const PointRegistration = () => {
   const isDarkMode = useColorScheme() === "dark";
 
   const backgroundStyle = {
@@ -27,4 +27,4 @@ const SettingTime = () => {
   );
 };
 
-export default SettingTime;
+export default PointRegistration;

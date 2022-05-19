@@ -9,13 +9,60 @@ const Footer = () => {
 
   return (
     <View style={tailwind("h-full bg-sky-500")}>
-      <Text
+      <View
+        style={{
+          flexDirection: "row",
+        }}
+      >
+        <View style={{ flex: 1 }}>
+          <Text
+            style={tailwind("p-5 text-slate-50 text-center")}
+            // XXX: 警告が出ていることは確認している
+            onPress={() => navigation.navigate("PointRegistration")}
+          >
+            地点登録
+          </Text>
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text
+            style={tailwind("p-5 text-slate-50 text-center")}
+            // XXX: 警告が出ていることは確認している
+            onPress={() => navigation.navigate("DateRegistration")}
+          >
+            予定日登録
+          </Text>
+        </View>
+        <View style={{ flex: 1 }}>
+          <Text
+            style={tailwind("p-5 text-slate-50 text-center")}
+            // XXX: 警告が出ていることは確認している
+            onPress={() => navigation.navigate("Others")}
+          >
+            その他
+          </Text>
+        </View>
+      </View>
+      {/* <Text
         style={tailwind("p-5 text-slate-50 text-center")}
         // XXX: 警告が出ていることは確認している
-        onPress={() => navigation.navigate("SettingTime")}
+        onPress={() => navigation.navigate("PointRegistration")}
       >
-        Footer
+        地点登録
+      </Text> */}
+      {/* <Text
+        style={tailwind("flex-1 p-5 text-slate-50 text-center")}
+        // XXX: 警告が出ていることは確認している
+        onPress={() => navigation.navigate("DateRegistration")}
+      >
+        予定日登録
       </Text>
+      <Text
+        style={tailwind("flex-1 p-5 text-slate-50 text-center")}
+        // XXX: 警告が出ていることは確認している
+        onPress={() => navigation.navigate("Others")}
+      >
+        その他
+      </Text> */}
     </View>
   );
 };
