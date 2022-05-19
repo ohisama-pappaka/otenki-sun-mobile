@@ -14,12 +14,6 @@
 			"height": "100%"
 		}
 	},
-	"bg-gray-50": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(249 250 251 / var(--tw-bg-opacity))"
-		}
-	},
 	"bg-gray-100": {
 		"style": {
 			"--tw-bg-opacity": 1,
@@ -36,6 +30,12 @@
 		"style": {
 			"--tw-bg-opacity": 1,
 			"backgroundColor": "rgb(209 213 219 / var(--tw-bg-opacity))"
+		}
+	},
+	"bg-gray-400": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(156 163 175 / var(--tw-bg-opacity))"
 		}
 	},
 	"bg-sky-500": {

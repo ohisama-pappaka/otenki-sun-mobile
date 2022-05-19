@@ -7,10 +7,10 @@ const Body = () => {
 
   return (
     <>
-      <View style={tailwind("h-40 bg-gray-50")} />
       <View style={tailwind("h-40 bg-gray-100")} />
       <View style={tailwind("h-40 bg-gray-200")} />
       <View style={tailwind("h-40 bg-gray-300")} />
+      <View style={tailwind("h-40 bg-gray-400")} />
     </>
   );
 };
