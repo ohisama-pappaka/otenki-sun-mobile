@@ -42,27 +42,6 @@ const Footer = () => {
           </Text>
         </View>
       </View>
-      {/* <Text
-        style={tailwind("p-5 text-slate-50 text-center")}
-        // XXX: 警告が出ていることは確認している
-        onPress={() => navigation.navigate("PointRegistration")}
-      >
-        地点登録
-      </Text> */}
-      {/* <Text
-        style={tailwind("flex-1 p-5 text-slate-50 text-center")}
-        // XXX: 警告が出ていることは確認している
-        onPress={() => navigation.navigate("DateRegistration")}
-      >
-        予定日登録
-      </Text>
-      <Text
-        style={tailwind("flex-1 p-5 text-slate-50 text-center")}
-        // XXX: 警告が出ていることは確認している
-        onPress={() => navigation.navigate("Others")}
-      >
-        その他
-      </Text> */}
     </View>
   );
 };
