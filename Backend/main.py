@@ -37,7 +37,7 @@ def home():
   data = response.json()
   weather_json=pre_res.json()
 
-  lat = data["coord"]["lat"]  # 座標獲得
+  lat = data["coord"]["lat"]  # 座標得
   lon = data["coord"]["lon"]  # 座標獲得
 
   main_api = "https://api.openweathermap.org/data/2.5/onecall?lat={city_lat}&lon={city_lon}&units=metric&lang=ja&appid={key}"
