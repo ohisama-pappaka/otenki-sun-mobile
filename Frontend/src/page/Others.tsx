@@ -5,7 +5,9 @@ import {
   ScrollView,
   StatusBar,
   Text,
+  View,
   useColorScheme,
+  Button,
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { useTailwind } from "tailwind-rn";
@@ -25,25 +27,29 @@ const Others = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}
       >
-        <Text
+        <View
           style={tailwind("p-5 text-current text-center")}
         >
-          Q&A!!!!!!!!
-        </Text>
-        <Text
+          <Button
+            title="Q&A"
+          />
+        </View>
+        <View
           style={tailwind("p-5 text-current text-center")}
-          // XXX: 警告が出ていることは確認している
-          onPress={() => navigation.navigate("PointRegistration")}
         >
-          地点の追加/変更/削除
-        </Text>
-        <Text
+          <Button
+            title="地点の追加/変更/削除"
+            onPress={() => navigation.navigate("PointRegistration")}
+          />
+        </View>
+        <View
           style={tailwind("p-5 text-current text-center")}
-          // XXX: 警告が出ていることは確認している
-          onPress={() => navigation.navigate("DateRegistration")}
         >
-          予定日の追加/変更/削除
-        </Text>
+          <Button
+            title="予定日の追加/変更/削除"
+            onPress={() => navigation.navigate("DateRegistration")}
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
