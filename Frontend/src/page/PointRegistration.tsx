@@ -6,8 +6,6 @@ import {
   useColorScheme,
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
-import { useTailwind } from "tailwind-rn";
-import { useNavigation } from "@react-navigation/native";
 
 import SelectPoint from "src/components/point-registration/SelectPoint";
 import Confirmation from "src/components/point-registration/Confirmation";
