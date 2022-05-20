@@ -1,3 +1,19 @@
+.m-20 {
+  margin: 5rem
+}
+
+.m-2 {
+  margin: 0.5rem
+}
+
+.mt-20 {
+  margin-top: 5rem
+}
+
+.mb-4 {
+  margin-bottom: 1rem
+}
+
 .flex {
   display: flex
 }
@@ -8,6 +24,50 @@
 
 .h-full {
   height: 100%
+}
+
+.flex-1 {
+  flex: 1 1 0%
+}
+
+.flex-row {
+  flex-direction: row
+}
+
+.items-center {
+  align-items: center
+}
+
+.justify-center {
+  justify-content: center
+}
+
+.rounded-lg {
+  border-radius: 0.5rem
+}
+
+.border-2 {
+  border-width: 2px
+}
+
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity))
+}
+
+.border-red-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(220 38 38 / var(--tw-border-opacity))
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity))
 }
 
 .bg-gray-100 {
@@ -35,12 +95,39 @@
   background-color: rgb(14 165 233 / var(--tw-bg-opacity))
 }
 
+.p-0 {
+  padding: 0px
+}
+
+.p-2 {
+  padding: 0.5rem
+}
+
 .p-5 {
   padding: 1.25rem
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem
+}
+
 .text-center {
   text-align: center
+}
+
+.font-bold {
+  font-weight: 700
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
 .text-slate-50 {

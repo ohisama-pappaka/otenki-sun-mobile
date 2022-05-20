@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -6,26 +6,37 @@ import {
   Text,
   useColorScheme,
   View,
-  StyleSheet,
+  Modal,
+  Alert,
+  Pressable,
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import RNPickerSelect from "react-native-picker-select";
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+import { useTailwind } from "tailwind-rn";
+import { useNavigation } from "@react-navigation/native";
 
 const PointRegistration = () => {
   const isDarkMode = useColorScheme() === "dark";
-
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  const tailwind = useTailwind();
+  const navigation = useNavigation();
+
+  const [isSelectPrefecture, setIsSelectPrefecture] = useState<boolean>(false);
+  const [isSelectCity, setIsSelectCity] = useState<boolean>(false);
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
+
+  const [selectedPrefecture, setSelectedPrefecture] = useState<string>("");
+  const [selectedCity, setSelectedCity] = useState<string>("");
+
+  useEffect(() => {
+    if (isSelectPrefecture === true && isSelectCity === true) {
+      setModalVisible(true);
+    }
+  }, [isSelectPrefecture, isSelectCity]);
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
@@ -33,7 +44,7 @@ const PointRegistration = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}
       >
-        <View style={styles.container}>
+        <View style={tailwind("flex-1 items-center justify-center")}>
           <RNPickerSelect
             placeholder={{ label: "都道府県を選択してください", value: "" }}
             items={[
@@ -44,7 +55,11 @@ const PointRegistration = () => {
               { label: "秋田", value: "秋田" },
               { label: "山形", value: "山形" },
             ]}
-            onValueChange={(value) => console.log(value)}
+            onValueChange={(value) => {
+              console.log(value);
+              setSelectedPrefecture(value);
+              setIsSelectPrefecture(true);
+            }}
           />
           <RNPickerSelect
             placeholder={{ label: "市町村を選択してください", value: "" }}
@@ -56,8 +71,66 @@ const PointRegistration = () => {
               { label: "室蘭市", value: "室蘭市" },
               { label: "釧路市", value: "釧路市" },
             ]}
-            onValueChange={(value) => console.log(value)}
+            onValueChange={(value) => {
+              console.log(value);
+              setSelectedCity(value);
+              setIsSelectCity(true);
+            }}
           />
+        </View>
+
+        <View style={tailwind("flex-1 justify-center items-center mt-20")}>
+          <Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              Alert.alert("Modal has been closed.");
+              setModalVisible(!modalVisible);
+              setIsSelectPrefecture(false);
+              setIsSelectCity(false);
+            }}
+          >
+            <View style={tailwind("flex-1 justify-center items-center mt-20")}>
+              <View
+                style={tailwind(
+                  "m-20 bg-white rounded-lg p-0 items-center px-4 py-10"
+                )}
+              >
+                <Text style={tailwind("mb-4 text-center")}>
+                  {selectedPrefecture}
+                  {selectedCity}
+                  を登録しますか？
+                </Text>
+                <View style={tailwind("flex flex-row")}>
+                  <Pressable
+                    style={tailwind(
+                      "rounded-lg border-2 border-gray-500 p-2 m-2 bg-white"
+                    )}
+                    // XXX: 警告が出ていることは確認している
+                    onPress={() => navigation.navigate("Home")}
+                  >
+                    <Text style={tailwind("font-bold text-center")}>
+                      登録する
+                    </Text>
+                  </Pressable>
+                  {/* TODO: キャンセルの際の挙動がうまく行ってない */}
+                  <Pressable
+                    style={tailwind(
+                      "rounded-lg border-2 border-red-600 p-2 m-2 bg-red-600"
+                    )}
+                    onPress={() => {
+                      setModalVisible(!modalVisible);
+                    }}
+                  >
+                    <Text style={tailwind("text-white font-bold text-center")}>
+                      キャンセル
+                    </Text>
+                  </Pressable>
+                </View>
+              </View>
+            </View>
+          </Modal>
         </View>
       </ScrollView>
     </SafeAreaView>
