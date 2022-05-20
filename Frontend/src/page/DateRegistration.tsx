@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import {
-  Modal,
-  Pressable,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -11,14 +9,11 @@ import {
   View,
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
-import RNPickerSelect from "react-native-picker-select";
 import { useTailwind } from "tailwind-rn";
 
 import InputDate from "src/components/date-registration/InputDate";
 import Validation from "src/components/date-registration/Validation";
-import { yearList } from "src/components/date-registration/CalendarData";
-import { monthList } from "src/components/date-registration/CalendarData";
-import { dayList } from "src/components/date-registration/CalendarData";
+import RegistrationList from "src/components/date-registration/RegistrationList";
 
 const DateRegistration = () => {
   const isDarkMode = useColorScheme() === "dark";
@@ -79,19 +74,8 @@ const DateRegistration = () => {
             </Text>
           </TouchableHighlight>
         </View>
-        <View>
-          <Text style={tailwind("bg-gray-300 mx-1 px-2")}>登録日一覧</Text>
-          <View>
-            {keepDateList &&
-              keepDateList.map((eachData) => {
-                return (
-                  <Text key={eachData} style={tailwind("my-2 px-2")}>
-                    {eachData}
-                  </Text>
-                );
-              })}
-          </View>
-        </View>
+
+        <RegistrationList keepDateList={keepDateList} />
 
         <Validation
           isOverlappingVali={isOverlappingVali}
