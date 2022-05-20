@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+.m-16 {
+  margin: 4rem
+=======
 .m-4 {
   margin: 1rem
+>>>>>>> develop
 }
 
 .m-20 {
@@ -8,6 +13,16 @@
 
 .m-2 {
   margin: 0.5rem
+}
+
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem
 }
 
 .mt-20 {
@@ -70,14 +85,18 @@
   border-width: 2px
 }
 
+<<<<<<< HEAD
+.border-sky-500 {
+=======
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity))
 }
 
 .border-gray-500 {
+>>>>>>> develop
   --tw-border-opacity: 1;
-  border-color: rgb(107 114 128 / var(--tw-border-opacity))
+  border-color: rgb(14 165 233 / var(--tw-border-opacity))
 }
 
 .border-red-600 {
@@ -85,6 +104,11 @@
   border-color: rgb(220 38 38 / var(--tw-border-opacity))
 }
 
+<<<<<<< HEAD
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity))
+=======
 .bg-sky-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(14 165 233 / var(--tw-bg-opacity))
@@ -93,6 +117,41 @@
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+>>>>>>> develop
+}
+
+.bg-sky-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 165 233 / var(--tw-bg-opacity))
+}
+
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity))
+}
+
+.p-4 {
+  padding: 1rem
+}
+
+<<<<<<< HEAD
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity))
+}
+
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity))
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+=======
+.p-5 {
+  padding: 1.25rem
+>>>>>>> develop
 }
 
 .bg-red-600 {
@@ -100,22 +159,26 @@
   background-color: rgb(220 38 38 / var(--tw-bg-opacity))
 }
 
-.p-4 {
-  padding: 1rem
+.p-2 {
+  padding: 0.5rem
+}
+
+<<<<<<< HEAD
+.p-0 {
+  padding: 0px
 }
 
 .p-5 {
   padding: 1.25rem
 }
 
-.p-0 {
-  padding: 0px
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem
 }
 
-.p-2 {
-  padding: 0.5rem
-}
-
+=======
+>>>>>>> develop
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem
