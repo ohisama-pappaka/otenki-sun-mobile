@@ -10,14 +10,10 @@ import {
   Pressable,
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
-import RNPickerSelect from "react-native-picker-select";
 import { useTailwind } from "tailwind-rn";
 import { useNavigation } from "@react-navigation/native";
 
-import SelectPoint from "src/components/point-registration/selectPoint";
-import { dummyDataPrefecture } from "src/components/point-registration/DummyData";
-import { dummyDataCity } from "src/components/point-registration/DummyData";
-
+import SelectPoint from "src/components/point-registration/SelectPoint";
 const PointRegistration = () => {
   const isDarkMode = useColorScheme() === "dark";
   const backgroundStyle = {
