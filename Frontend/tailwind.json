@@ -184,6 +184,11 @@
 			"fontWeight": "700"
 		}
 	},
+	"text-current": {
+		"style": {
+			"color": "currentColor"
+		}
+	},
 	"text-slate-50": {
 		"style": {
 			"--tw-text-opacity": 1,

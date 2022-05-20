@@ -25,16 +25,20 @@ const Others = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}
       >
-        <Text>Q&A</Text>
         <Text
-          style={tailwind("p-5 text-currunt text-center")}
+          style={tailwind("p-5 text-current text-center")}
+        >
+          Q&A
+        </Text>
+        <Text
+          style={tailwind("p-5 text-current text-center")}
           // XXX: 警告が出ていることは確認している
           onPress={() => navigation.navigate("PointRegistration")}
         >
           地点の追加/変更/削除
         </Text>
         <Text
-          style={tailwind("p-5 text-currunt text-center")}
+          style={tailwind("p-5 text-current text-center")}
           // XXX: 警告が出ていることは確認している
           onPress={() => navigation.navigate("DateRegistration")}
         >

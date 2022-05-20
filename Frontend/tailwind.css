@@ -125,6 +125,10 @@
   font-weight: 700
 }
 
+.text-current {
+  color: currentColor
+}
+
 .text-slate-50 {
   --tw-text-opacity: 1;
   color: rgb(248 250 252 / var(--tw-text-opacity))
