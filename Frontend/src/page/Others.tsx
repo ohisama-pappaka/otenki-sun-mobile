@@ -28,7 +28,7 @@ const Others = () => {
         <Text
           style={tailwind("p-5 text-current text-center")}
         >
-          Q&A
+          Q&A!!!!!!!!
         </Text>
         <Text
           style={tailwind("p-5 text-current text-center")}
