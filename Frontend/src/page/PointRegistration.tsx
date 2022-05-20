@@ -14,8 +14,9 @@ import RNPickerSelect from "react-native-picker-select";
 import { useTailwind } from "tailwind-rn";
 import { useNavigation } from "@react-navigation/native";
 
-import { dummyDataPrefecture } from "src/components/point-registration/dummyData";
-import { dummyDataCity } from "src/components/point-registration/dummyData";
+import SelectPoint from "src/components/point-registration/selectPoint";
+import { dummyDataPrefecture } from "src/components/point-registration/DummyData";
+import { dummyDataCity } from "src/components/point-registration/DummyData";
 
 const PointRegistration = () => {
   const isDarkMode = useColorScheme() === "dark";
@@ -55,26 +56,14 @@ const PointRegistration = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}
       >
-        <View style={tailwind("flex-1 items-center justify-center")}>
-          <RNPickerSelect
-            placeholder={{ label: "都道府県を選択してください", value: "" }}
-            items={dummyDataPrefecture}
-            onValueChange={(value) => {
-              setSelectedPrefecture(value);
-              setIsSelectPrefecture(true);
-            }}
-            value={selectedPrefecture}
-          />
-          <RNPickerSelect
-            placeholder={{ label: "市町村を選択してください", value: "" }}
-            items={dummyDataCity}
-            onValueChange={(value) => {
-              setSelectedCity(value);
-              setIsSelectCity(true);
-            }}
-            value={selectedCity}
-          />
-        </View>
+        <SelectPoint
+          selectedPrefecture={selectedPrefecture}
+          selectedCity={selectedCity}
+          setSelectedPrefecture={setSelectedPrefecture}
+          setSelectedCity={setSelectedCity}
+          setIsSelectPrefecture={setIsSelectPrefecture}
+          setIsSelectCity={setIsSelectCity}
+        />
 
         <View style={tailwind("flex-1 justify-center items-center mt-20")}>
           <Modal
