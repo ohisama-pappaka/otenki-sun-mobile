@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -9,6 +9,7 @@ import {
   Modal,
   Alert,
   Pressable,
+  RefreshControl,
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import RNPickerSelect from "react-native-picker-select";
@@ -23,7 +24,6 @@ const PointRegistration = () => {
 
   const tailwind = useTailwind();
   const navigation = useNavigation();
-
   const [isSelectPrefecture, setIsSelectPrefecture] = useState<boolean>(false);
   const [isSelectCity, setIsSelectCity] = useState<boolean>(false);
   const [modalVisible, setModalVisible] = useState<boolean>(false);
@@ -31,11 +31,21 @@ const PointRegistration = () => {
   const [selectedPrefecture, setSelectedPrefecture] = useState<string>("");
   const [selectedCity, setSelectedCity] = useState<string>("");
 
+  // 都道府県と市町村の選択がされたときが、確認画面が出るトリガー
   useEffect(() => {
     if (isSelectPrefecture === true && isSelectCity === true) {
       setModalVisible(true);
     }
   }, [isSelectPrefecture, isSelectCity]);
+
+  // キャンセル時の入力データのクリア
+  const onRefresh = useCallback(() => {
+    setModalVisible(false);
+    setIsSelectCity(false);
+    setIsSelectPrefecture(false);
+    setSelectedPrefecture("");
+    setSelectedCity("");
+  }, []);
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -56,10 +66,10 @@ const PointRegistration = () => {
               { label: "山形", value: "山形" },
             ]}
             onValueChange={(value) => {
-              console.log(value);
               setSelectedPrefecture(value);
               setIsSelectPrefecture(true);
             }}
+            value={selectedPrefecture}
           />
           <RNPickerSelect
             placeholder={{ label: "市町村を選択してください", value: "" }}
@@ -72,10 +82,10 @@ const PointRegistration = () => {
               { label: "釧路市", value: "釧路市" },
             ]}
             onValueChange={(value) => {
-              console.log(value);
               setSelectedCity(value);
               setIsSelectCity(true);
             }}
+            value={selectedCity}
           />
         </View>
 
@@ -84,12 +94,6 @@ const PointRegistration = () => {
             animationType="slide"
             transparent={true}
             visible={modalVisible}
-            onRequestClose={() => {
-              Alert.alert("Modal has been closed.");
-              setModalVisible(!modalVisible);
-              setIsSelectPrefecture(false);
-              setIsSelectCity(false);
-            }}
           >
             <View style={tailwind("flex-1 justify-center items-center mt-20")}>
               <View
@@ -120,7 +124,7 @@ const PointRegistration = () => {
                       "rounded-lg border-2 border-red-600 p-2 m-2 bg-red-600"
                     )}
                     onPress={() => {
-                      setModalVisible(!modalVisible);
+                      onRefresh();
                     }}
                   >
                     <Text style={tailwind("text-white font-bold text-center")}>
