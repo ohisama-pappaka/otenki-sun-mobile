@@ -107,15 +107,6 @@
 			"borderLeftColor": "rgb(14 165 233 / var(--tw-border-opacity))"
 		}
 	},
-	"border-gray-500": {
-		"style": {
-			"--tw-border-opacity": 1,
-			"borderTopColor": "rgb(107 114 128 / var(--tw-border-opacity))",
-			"borderRightColor": "rgb(107 114 128 / var(--tw-border-opacity))",
-			"borderBottomColor": "rgb(107 114 128 / var(--tw-border-opacity))",
-			"borderLeftColor": "rgb(107 114 128 / var(--tw-border-opacity))"
-		}
-	},
 	"border-red-600": {
 		"style": {
 			"--tw-border-opacity": 1,
@@ -123,6 +114,15 @@
 			"borderRightColor": "rgb(220 38 38 / var(--tw-border-opacity))",
 			"borderBottomColor": "rgb(220 38 38 / var(--tw-border-opacity))",
 			"borderLeftColor": "rgb(220 38 38 / var(--tw-border-opacity))"
+		}
+	},
+	"border-gray-500": {
+		"style": {
+			"--tw-border-opacity": 1,
+			"borderTopColor": "rgb(107 114 128 / var(--tw-border-opacity))",
+			"borderRightColor": "rgb(107 114 128 / var(--tw-border-opacity))",
+			"borderBottomColor": "rgb(107 114 128 / var(--tw-border-opacity))",
+			"borderLeftColor": "rgb(107 114 128 / var(--tw-border-opacity))"
 		}
 	},
 	"bg-sky-500": {
@@ -135,18 +135,6 @@
 		"style": {
 			"--tw-bg-opacity": 1,
 			"backgroundColor": "rgb(209 213 219 / var(--tw-bg-opacity))"
-		}
-	},
-	"bg-sky-600": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(2 132 199 / var(--tw-bg-opacity))"
-		}
-	},
-	"bg-red-600": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(220 38 38 / var(--tw-bg-opacity))"
 		}
 	},
 	"bg-gray-100": {
@@ -173,6 +161,12 @@
 			"backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
 		}
 	},
+	"bg-red-600": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(220 38 38 / var(--tw-bg-opacity))"
+		}
+	},
 	"p-2": {
 		"style": {
 			"paddingTop": 8,
@@ -181,20 +175,20 @@
 			"paddingLeft": 8
 		}
 	},
-	"p-5": {
-		"style": {
-			"paddingTop": 20,
-			"paddingRight": 20,
-			"paddingBottom": 20,
-			"paddingLeft": 20
-		}
-	},
 	"p-0": {
 		"style": {
 			"paddingTop": 0,
 			"paddingRight": 0,
 			"paddingBottom": 0,
 			"paddingLeft": 0
+		}
+	},
+	"p-5": {
+		"style": {
+			"paddingTop": 20,
+			"paddingRight": 20,
+			"paddingBottom": 20,
+			"paddingLeft": 20
 		}
 	},
 	"px-2": {

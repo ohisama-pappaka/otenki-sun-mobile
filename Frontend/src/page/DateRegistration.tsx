@@ -15,6 +15,7 @@ import RNPickerSelect from "react-native-picker-select";
 import { useTailwind } from "tailwind-rn";
 
 import InputDate from "src/components/date-registration/InputDate";
+import Validation from "src/components/date-registration/Validation";
 import { yearList } from "src/components/date-registration/CalendarData";
 import { monthList } from "src/components/date-registration/CalendarData";
 import { dayList } from "src/components/date-registration/CalendarData";
@@ -41,10 +42,8 @@ const DateRegistration = () => {
     const newDataList = [...keepDateList];
 
     if (inputYear === "" || inputMonth === "" || inputDay === "") {
-      console.log("データに欠損あり！");
       setIsInputNull(true);
     } else if (newDataList.includes(addData) === true) {
-      console.log("重複あり！");
       setOverlappingData(addData);
       setIsOverlappingVali(true);
     } else {
@@ -94,76 +93,16 @@ const DateRegistration = () => {
           </View>
         </View>
 
-        {/* 重複がある場合の警告 */}
-        <View style={tailwind("flex-1 justify-center items-center mt-20")}>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={isOverlappingVali}
-          >
-            <View style={tailwind("flex-1 justify-center items-center mt-20")}>
-              <View
-                style={tailwind(
-                  "m-20 bg-white rounded-lg p-0 items-center px-4 py-10"
-                )}
-              >
-                <Text style={tailwind("mb-4 text-center")}>
-                  {overlappingData}
-                  は既に登録されています
-                </Text>
-
-                <Pressable
-                  style={tailwind(
-                    "rounded-lg border-2 border-red-600 p-2 m-2 bg-red-600"
-                  )}
-                  onPress={() => {
-                    setIsOverlappingVali(false);
-                    setInputYear("");
-                    setInputMonth("");
-                    setInputDay("");
-                  }}
-                >
-                  <Text style={tailwind("text-white font-bold text-center")}>
-                    キャンセル
-                  </Text>
-                </Pressable>
-              </View>
-            </View>
-          </Modal>
-        </View>
-
-        {/* データの欠損がある場合の警告 */}
-        <View style={tailwind("flex-1 justify-center items-center mt-20")}>
-          <Modal animationType="slide" transparent={true} visible={isInputNull}>
-            <View style={tailwind("flex-1 justify-center items-center mt-20")}>
-              <View
-                style={tailwind(
-                  "m-20 bg-white rounded-lg p-0 items-center px-4 py-10"
-                )}
-              >
-                <Text style={tailwind("mb-4 text-center")}>
-                  データの入力に誤りがあります！
-                </Text>
-
-                <Pressable
-                  style={tailwind(
-                    "rounded-lg border-2 border-red-600 p-2 m-2 bg-red-600"
-                  )}
-                  onPress={() => {
-                    setIsInputNull(false);
-                    setInputYear("");
-                    setInputMonth("");
-                    setInputDay("");
-                  }}
-                >
-                  <Text style={tailwind("text-white font-bold text-center")}>
-                    キャンセル
-                  </Text>
-                </Pressable>
-              </View>
-            </View>
-          </Modal>
-        </View>
+        <Validation
+          isOverlappingVali={isOverlappingVali}
+          setIsOverlappingVali={setIsOverlappingVali}
+          overlappingData={overlappingData}
+          isInputNull={isInputNull}
+          setIsInputNull={setIsInputNull}
+          setInputYear={setInputYear}
+          setInputMonth={setInputMonth}
+          setInputDay={setInputDay}
+        />
       </ScrollView>
     </SafeAreaView>
   );
