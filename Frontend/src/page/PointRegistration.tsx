@@ -34,8 +34,6 @@ const PointRegistration = () => {
     }
   }, [selectedPrefecture, selectedCity]);
 
-  console.log(modalVisible);
-
   // キャンセル時の入力データのクリア
   const onRefresh = useCallback(() => {
     setModalVisible(false);
