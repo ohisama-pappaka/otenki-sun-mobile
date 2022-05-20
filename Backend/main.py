@@ -41,13 +41,16 @@ def home():
   lon = data["coord"]["lon"]  # 座標獲得
 
   main_api = "https://api.openweathermap.org/data/2.5/onecall?lat={city_lat}&lon={city_lon}&units=metric&lang=ja&appid={key}"
-
+  week_api = "https://api.open-meteo.com/v1/forecast?latitude=33.9757&longitude=131.2414&hourly=temperature_2m,precipitation&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_hours&timezone=Asia%2FTokyo"
+  
   main_url = main_api.format(city_lat=lat,city_lon=lon,key = API_KEY)
   main_response = requests.get(main_url)
   main_data = main_response.json()
-  time_zone = tz.gettz('Asia/Tokyo')
+  week_response = requests.get(week_api)
+  week_data = week_response.json()
 
-  now_hour = datetime.now().hour+9
+  time_zone = tz.gettz('Asia/Tokyo')
+  now_hour = datetime.now().hour + 9
   
   
   def precipitation(time,cnt): # 降水確率求める
@@ -62,29 +65,47 @@ def home():
     return format(cor)
 
 
+  def daily_weather():
   
-  output_data = []
-  for time_cnt in range(0,48,6) :
-    miner_data = []
-    output_time = datetime.fromtimestamp(main_data["hourly"][time_cnt]["dt"],time_zone) #　時刻
-    output_weather = main_data["hourly"][time_cnt]["weather"][0]["main"] #　天気情報
-    output_temp = main_data["hourly"][time_cnt]["temp"]#　気温
-    output_humidity = main_data["hourly"][time_cnt]["humidity"] #湿度
-    extra_time = now_hour+time_cnt
-    cnt = 0
-    if extra_time > 24:
-      cnt = 1
-      extra_time = now_hour+time_cnt-24
-    elif extra_time > 48:
-      cnt = 1
-      extra_time = now_hour+time_cnt-48
-    output_pre=precipitation(extra_time,cnt)
+    daily_data = []
+    for time_cnt in range(0,48,6) :
+      
+      output_time = datetime.fromtimestamp(main_data["hourly"][time_cnt]["dt"],time_zone) #　時刻
+      output_weather = main_data["hourly"][time_cnt]["weather"][0]["main"] #　天気情報
+      output_temp = main_data["hourly"][time_cnt]["temp"]#　気温
+      output_humidity = main_data["hourly"][time_cnt]["humidity"] #湿度
+      extra_time = now_hour+time_cnt
+      cnt = 0
+      if extra_time > 24:
+        cnt = 1
+        extra_time = now_hour + time_cnt-24
+      elif extra_time > 48:
+        cnt = 1
+        extra_time = now_hour + time_cnt-48
+      output_pre=precipitation(extra_time,cnt)
 
-    miner_data.append(output_time)
-    miner_data.append(output_weather)
-    miner_data.append(output_temp)
-    miner_data.append(output_humidity)
-    miner_data.append(output_pre)
+      miner_data=[output_time,output_weather,output_temp,output_humidity,output_pre]
 
-    output_data.append(miner_data)
-  return output_data
+      daily_data.append(miner_data)
+
+    return daily_data
+
+  def weekly_weather():
+    weekly_data=[]
+    for time_cnt in range(0,6):
+
+      week_time = week_data["daily"]["time"][time_cnt]
+      week_weather = week_data["daily"]["weathercode"][time_cnt]
+      week_max = week_data["daily"]["temperature_2m_max"][time_cnt]
+      week_min = week_data["daily"]["temperature_2m_min"][time_cnt]
+      week_pre_sum = week_data["daily"]["precipitation_sum"][time_cnt]
+
+      miner_data = [week_time,week_weather,week_max,week_min,week_pre_sum]
+
+      weekly_data.append(miner_data)
+          
+    return weekly_data    
+  
+  return weekly_weather()
+
+
