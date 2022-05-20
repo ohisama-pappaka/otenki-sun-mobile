@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 .m-16 {
   margin: 4rem
+=======
+.m-4 {
+  margin: 1rem
+>>>>>>> develop
 }
 
 .m-20 {
@@ -32,12 +37,20 @@
   display: flex
 }
 
-.h-40 {
-  height: 10rem
+.h-52 {
+  height: 13rem
+}
+
+.h-24 {
+  height: 6rem
 }
 
 .h-full {
   height: 100%
+}
+
+.w-24 {
+  width: 6rem
 }
 
 .flex-1 {
@@ -56,6 +69,14 @@
   justify-content: center
 }
 
+.self-center {
+  align-self: center
+}
+
+.rounded-md {
+  border-radius: 0.375rem
+}
+
 .rounded-lg {
   border-radius: 0.5rem
 }
@@ -64,7 +85,16 @@
   border-width: 2px
 }
 
+<<<<<<< HEAD
 .border-sky-500 {
+=======
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity))
+}
+
+.border-gray-500 {
+>>>>>>> develop
   --tw-border-opacity: 1;
   border-color: rgb(14 165 233 / var(--tw-border-opacity))
 }
@@ -74,9 +104,20 @@
   border-color: rgb(220 38 38 / var(--tw-border-opacity))
 }
 
+<<<<<<< HEAD
 .border-gray-500 {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity))
+=======
+.bg-sky-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 165 233 / var(--tw-bg-opacity))
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+>>>>>>> develop
 }
 
 .bg-sky-500 {
@@ -89,11 +130,11 @@
   background-color: rgb(209 213 219 / var(--tw-bg-opacity))
 }
 
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+.p-4 {
+  padding: 1rem
 }
 
+<<<<<<< HEAD
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity))
@@ -107,6 +148,10 @@
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+=======
+.p-5 {
+  padding: 1.25rem
+>>>>>>> develop
 }
 
 .bg-red-600 {
@@ -118,6 +163,7 @@
   padding: 0.5rem
 }
 
+<<<<<<< HEAD
 .p-0 {
   padding: 0px
 }
@@ -131,6 +177,8 @@
   padding-right: 0.5rem
 }
 
+=======
+>>>>>>> develop
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem
@@ -145,16 +193,31 @@
   text-align: center
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem
+}
+
 .font-bold {
   font-weight: 700
 }
 
-.text-white {
+.text-amber-500 {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity))
+  color: rgb(245 158 11 / var(--tw-text-opacity))
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity))
 }
 
 .text-slate-50 {
   --tw-text-opacity: 1;
   color: rgb(248 250 252 / var(--tw-text-opacity))
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
 }
