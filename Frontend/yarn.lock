@@ -799,6 +799,8 @@
   version "0.2.3"
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
+<<<<<<< HEAD
+=======
 
 "@callstack/react-theme-provider@^3.0.7":
   "integrity" "sha512-Ab6rbD2w4u9W3yf7LQQ8evx9m8fZNsoWxt+MFm3AyZnyKQNCJf4K7ip9tHHZgSs+HTdoj38lEqPehvFOVQKvAg=="
@@ -807,6 +809,7 @@
   dependencies:
     "deepmerge" "^3.2.0"
     "hoist-non-react-statics" "^3.3.0"
+>>>>>>> develop
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
@@ -2473,15 +2476,21 @@ color-string@^1.6.0, color-string@^1.9.0:
     simple-swizzle "^0.2.2"
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> develop
 color@^3.1.3:
   version "3.2.1"
   resolved "https://registry.npmjs.org/color/-/color-3.2.1.tgz"
   integrity sha512-aBl7dZI9ENN6fUGC7mWpMTPNHmWUSNan9tuWN6ahh5ZLNk9baLJOnSMlrQkHcrfFgz2/RigjUVAjdx36VcemKA==
+<<<<<<< HEAD
+=======
 =======
 "color@^3.1.2", "color@^3.1.3":
   "integrity" "sha512-aBl7dZI9ENN6fUGC7mWpMTPNHmWUSNan9tuWN6ahh5ZLNk9baLJOnSMlrQkHcrfFgz2/RigjUVAjdx36VcemKA=="
   "resolved" "https://registry.npmjs.org/color/-/color-3.2.1.tgz"
   "version" "3.2.1"
+>>>>>>> develop
 >>>>>>> develop
   dependencies:
     color-convert "^1.9.3"
@@ -6252,6 +6261,13 @@ react-native-gradle-plugin@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.6.tgz"
   integrity sha512-eIlgtsmDp1jLC24dRn43hB3kEcZVqx6DUQbR0N1ABXGnMEafm9I3V3dUUeD1vh+Dy5WqijSoEwLNUPLgu5zDMg==
+<<<<<<< HEAD
+
+react-native-picker-select@^8.0.4:
+  version "8.0.4"
+  resolved "https://registry.npmjs.org/react-native-picker-select/-/react-native-picker-select-8.0.4.tgz"
+  integrity sha512-orBjPIwBkV5oipyVw263YNMI56f6Kj3p/ejabZoCYYNSG3AiLVVhC2RqsxMgDA7IayyURAW+AlV+mDJyVqLBkg==
+=======
 
 <<<<<<< HEAD
 react-native-picker-select@^8.0.4:
@@ -6277,6 +6293,7 @@ react-native-picker-select@^8.0.4:
   "integrity" "sha512-orBjPIwBkV5oipyVw263YNMI56f6Kj3p/ejabZoCYYNSG3AiLVVhC2RqsxMgDA7IayyURAW+AlV+mDJyVqLBkg=="
   "resolved" "https://registry.npmjs.org/react-native-picker-select/-/react-native-picker-select-8.0.4.tgz"
   "version" "8.0.4"
+>>>>>>> develop
 >>>>>>> develop
   dependencies:
     "@react-native-picker/picker" "^1.8.3"
@@ -6314,10 +6331,15 @@ react-native-swipe-gestures@^1.0.5:
   integrity sha512-Ns7Bn9H/Tyw278+5SQx9oAblDZ7JixyzeOczcBK8dipQk2pD7Djkcfnf1nB/8RErAmMLL9iXgW0QHqiII8AhKw==
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> develop
 react-native@0.68.2:
   version "0.68.2"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.68.2.tgz"
   integrity sha512-qNMz+mdIirCEmlrhapAtAG+SWVx6MAiSfCbFNhfHqiqu1xw1OKXdzIrjaBEPihRC2pcORCoCHduHGQe/Pz9Yuw==
+<<<<<<< HEAD
+=======
 =======
 "react-native-vector-icons@*":
   "integrity" "sha512-2AHZ/h9d/+rC0odz+OwbGNlc1Lik/pHhSixn4HfC8RtQ8CxfSBZ6gg7bTLcZhdSvZN+ZEGi30Fj+ZnOSQy+smg=="
@@ -6331,6 +6353,7 @@ react-native@0.68.2:
   "integrity" "sha512-qNMz+mdIirCEmlrhapAtAG+SWVx6MAiSfCbFNhfHqiqu1xw1OKXdzIrjaBEPihRC2pcORCoCHduHGQe/Pz9Yuw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.68.2.tgz"
   "version" "0.68.2"
+>>>>>>> develop
 >>>>>>> develop
   dependencies:
     "@jest/create-cache-key-function" "^27.0.1"
@@ -6398,15 +6421,21 @@ react-test-renderer@17.0.2:
     scheduler "^0.20.2"
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> develop
 react@17.0.2:
   version "17.0.2"
   resolved "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
+<<<<<<< HEAD
+=======
 =======
 "react@*", "react@^16.0.0 || ^17.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0", "react@^17.0.0", "react@>= 15.2.1", "react@>=16.0", "react@>=16.3.0", "react@>=16.8.0", "react@16 || 17", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
+>>>>>>> develop
 >>>>>>> develop
   dependencies:
     loose-envify "^1.1.0"
@@ -7934,6 +7963,13 @@ yargs-parser@^18.1.2, yargs-parser@^18.1.3:
   dependencies:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
+<<<<<<< HEAD
+
+yargs-parser@^21.0.0:
+  version "21.0.1"
+  resolved "https://registry.npmjs.org/yargs-parser/-/yargs-parser-21.0.1.tgz"
+  integrity sha512-9BK1jFpLzJROCI5TzwZL/TU4gqjK5xiHV/RfWLOahrjAko/e4DJkRDZQXfvqAsiZzzYhgAzbgz6lg48jcm4GLg==
+=======
 
 <<<<<<< HEAD
 yargs-parser@^21.0.0:
@@ -7950,6 +7986,7 @@ yargs-parser@^21.0.0:
   "integrity" "sha512-9BK1jFpLzJROCI5TzwZL/TU4gqjK5xiHV/RfWLOahrjAko/e4DJkRDZQXfvqAsiZzzYhgAzbgz6lg48jcm4GLg=="
   "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-21.0.1.tgz"
   "version" "21.0.1"
+>>>>>>> develop
 >>>>>>> develop
 
 yargs@^15.1.0, yargs@^15.3.1, yargs@^15.4.1:
@@ -7970,10 +8007,16 @@ yargs@^15.1.0, yargs@^15.3.1, yargs@^15.4.1:
     yargs-parser "^18.1.2"
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> develop
 yargs@^17.3.1:
   version "17.5.0"
   resolved "https://registry.npmjs.org/yargs/-/yargs-17.5.0.tgz"
   integrity sha512-3sLxVhbAB5OC8qvVRebCLWuouhwh/rswsiDYx3WGxajUk/l4G20SKfrKKFeNIHboUFt2JFgv2yfn+5cgOr/t5A==
+<<<<<<< HEAD
+  dependencies:
+=======
 =======
 "yargs@^16.1.1":
   "integrity" "sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw=="
@@ -7994,6 +8037,7 @@ yargs@^17.3.1:
   "version" "17.5.0"
 >>>>>>> develop
   dependencies:
+>>>>>>> develop
     cliui "^7.0.2"
     escalade "^3.1.1"
     get-caller-file "^2.0.5"

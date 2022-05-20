@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 .m-16 {
   margin: 4rem
-=======
-.m-4 {
-  margin: 1rem
->>>>>>> develop
 }
 
 .m-20 {
@@ -13,6 +8,10 @@
 
 .m-2 {
   margin: 0.5rem
+}
+
+.m-4 {
+  margin: 1rem
 }
 
 .mx-1 {
@@ -37,16 +36,16 @@
   display: flex
 }
 
+.h-full {
+  height: 100%
+}
+
 .h-52 {
   height: 13rem
 }
 
 .h-24 {
   height: 6rem
-}
-
-.h-full {
-  height: 100%
 }
 
 .w-24 {
@@ -73,28 +72,19 @@
   align-self: center
 }
 
-.rounded-md {
-  border-radius: 0.375rem
-}
-
 .rounded-lg {
   border-radius: 0.5rem
+}
+
+.rounded-md {
+  border-radius: 0.375rem
 }
 
 .border-2 {
   border-width: 2px
 }
 
-<<<<<<< HEAD
 .border-sky-500 {
-=======
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity))
-}
-
-.border-gray-500 {
->>>>>>> develop
   --tw-border-opacity: 1;
   border-color: rgb(14 165 233 / var(--tw-border-opacity))
 }
@@ -104,20 +94,9 @@
   border-color: rgb(220 38 38 / var(--tw-border-opacity))
 }
 
-<<<<<<< HEAD
 .border-gray-500 {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity))
-=======
-.bg-sky-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 165 233 / var(--tw-bg-opacity))
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
->>>>>>> develop
 }
 
 .bg-sky-500 {
@@ -130,28 +109,9 @@
   background-color: rgb(209 213 219 / var(--tw-bg-opacity))
 }
 
-.p-4 {
-  padding: 1rem
-}
-
-<<<<<<< HEAD
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity))
-}
-
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity))
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
-=======
-.p-5 {
-  padding: 1.25rem
->>>>>>> develop
 }
 
 .bg-red-600 {
@@ -163,13 +123,16 @@
   padding: 0.5rem
 }
 
-<<<<<<< HEAD
+.p-5 {
+  padding: 1.25rem
+}
+
 .p-0 {
   padding: 0px
 }
 
-.p-5 {
-  padding: 1.25rem
+.p-4 {
+  padding: 1rem
 }
 
 .px-2 {
@@ -177,8 +140,6 @@
   padding-right: 0.5rem
 }
 
-=======
->>>>>>> develop
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem
@@ -202,6 +163,20 @@
   font-weight: 700
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.text-current {
+  color: currentColor
+}
+
+.text-slate-50 {
+  --tw-text-opacity: 1;
+  color: rgb(248 250 252 / var(--tw-text-opacity))
+}
+
 .text-amber-500 {
   --tw-text-opacity: 1;
   color: rgb(245 158 11 / var(--tw-text-opacity))
@@ -210,14 +185,4 @@
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity))
-}
-
-.text-slate-50 {
-  --tw-text-opacity: 1;
-  color: rgb(248 250 252 / var(--tw-text-opacity))
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity))
 }
