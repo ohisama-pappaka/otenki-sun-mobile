@@ -7,9 +7,7 @@ import {
   useColorScheme,
   View,
   Modal,
-  Alert,
   Pressable,
-  RefreshControl,
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import RNPickerSelect from "react-native-picker-select";
