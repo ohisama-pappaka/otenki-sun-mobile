@@ -11,8 +11,6 @@ type Props = {
   selectedCity: string;
   setSelectedPrefecture: Dispatch<SetStateAction<string>>;
   setSelectedCity: Dispatch<SetStateAction<string>>;
-  setIsSelectPrefecture: Dispatch<SetStateAction<boolean>>;
-  setIsSelectCity: Dispatch<SetStateAction<boolean>>;
 };
 
 const SelectPoint = ({
@@ -20,8 +18,6 @@ const SelectPoint = ({
   selectedCity,
   setSelectedPrefecture,
   setSelectedCity,
-  setIsSelectPrefecture,
-  setIsSelectCity,
 }: Props) => {
   const tailwind = useTailwind();
 
@@ -32,7 +28,6 @@ const SelectPoint = ({
         items={dummyDataPrefecture}
         onValueChange={(value) => {
           setSelectedPrefecture(value);
-          setIsSelectPrefecture(true);
         }}
         value={selectedPrefecture}
       />
@@ -41,7 +36,6 @@ const SelectPoint = ({
         items={dummyDataCity}
         onValueChange={(value) => {
           setSelectedCity(value);
-          setIsSelectCity(true);
         }}
         value={selectedCity}
       />

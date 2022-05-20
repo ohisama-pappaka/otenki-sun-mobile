@@ -22,8 +22,6 @@ const PointRegistration = () => {
 
   const tailwind = useTailwind();
   const navigation = useNavigation();
-  const [isSelectPrefecture, setIsSelectPrefecture] = useState<boolean>(false);
-  const [isSelectCity, setIsSelectCity] = useState<boolean>(false);
   const [modalVisible, setModalVisible] = useState<boolean>(false);
 
   const [selectedPrefecture, setSelectedPrefecture] = useState<string>("");
@@ -31,16 +29,16 @@ const PointRegistration = () => {
 
   // 都道府県と市町村の選択がされたときが、確認画面が出るトリガー
   useEffect(() => {
-    if (isSelectPrefecture === true && isSelectCity === true) {
+    if (selectedPrefecture !== "" && selectedCity !== "") {
       setModalVisible(true);
     }
-  }, [isSelectPrefecture, isSelectCity]);
+  }, [selectedPrefecture, selectedCity]);
+
+  console.log(modalVisible);
 
   // キャンセル時の入力データのクリア
   const onRefresh = useCallback(() => {
     setModalVisible(false);
-    setIsSelectCity(false);
-    setIsSelectPrefecture(false);
     setSelectedPrefecture("");
     setSelectedCity("");
   }, []);
@@ -57,8 +55,6 @@ const PointRegistration = () => {
           selectedCity={selectedCity}
           setSelectedPrefecture={setSelectedPrefecture}
           setSelectedCity={setSelectedCity}
-          setIsSelectPrefecture={setIsSelectPrefecture}
-          setIsSelectCity={setIsSelectCity}
         />
 
         <View style={tailwind("flex-1 justify-center items-center mt-20")}>
@@ -90,7 +86,6 @@ const PointRegistration = () => {
                       登録する
                     </Text>
                   </Pressable>
-                  {/* TODO: キャンセルの際の挙動がうまく行ってない */}
                   <Pressable
                     style={tailwind(
                       "rounded-lg border-2 border-red-600 p-2 m-2 bg-red-600"
