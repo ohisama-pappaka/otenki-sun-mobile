@@ -78,9 +78,9 @@
 			"height": 96
 		}
 	},
-	"h-40": {
+	"h-6": {
 		"style": {
-			"height": 160
+			"height": 24
 		}
 	},
 	"w-full": {
@@ -91,6 +91,11 @@
 	"w-24": {
 		"style": {
 			"width": 96
+		}
+	},
+	"w-6": {
+		"style": {
+			"width": 24
 		}
 	},
 	"flex-1": {
@@ -144,6 +149,14 @@
 			"borderLeftWidth": 2
 		}
 	},
+	"border-0": {
+		"style": {
+			"borderTopWidth": 0,
+			"borderRightWidth": 0,
+			"borderBottomWidth": 0,
+			"borderLeftWidth": 0
+		}
+	},
 	"border-sky-500": {
 		"style": {
 			"--tw-border-opacity": 1,
@@ -193,30 +206,6 @@
 		"style": {
 			"--tw-bg-opacity": 1,
 			"backgroundColor": "rgb(220 38 38 / var(--tw-bg-opacity))"
-		}
-	},
-	"bg-gray-200": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(229 231 235 / var(--tw-bg-opacity))"
-		}
-	},
-	"bg-gray-400": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(156 163 175 / var(--tw-bg-opacity))"
-		}
-	},
-	"bg-gray-500": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(107 114 128 / var(--tw-bg-opacity))"
-		}
-	},
-	"bg-gray-600": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(75 85 99 / var(--tw-bg-opacity))"
 		}
 	},
 	"p-2": {
@@ -269,6 +258,31 @@
 			"paddingBottom": 40
 		}
 	},
+	"pr-3": {
+		"style": {
+			"paddingRight": 12
+		}
+	},
+	"pt-4": {
+		"style": {
+			"paddingTop": 16
+		}
+	},
+	"pl-2": {
+		"style": {
+			"paddingLeft": 8
+		}
+	},
+	"pb-24": {
+		"style": {
+			"paddingBottom": 96
+		}
+	},
+	"pb-8": {
+		"style": {
+			"paddingBottom": 32
+		}
+	},
 	"text-center": {
 		"style": {
 			"textAlign": "center"
@@ -278,6 +292,12 @@
 		"style": {
 			"fontSize": 24,
 			"lineHeight": 32
+		}
+	},
+	"text-lg": {
+		"style": {
+			"fontSize": 18,
+			"lineHeight": 28
 		}
 	},
 	"font-bold": {
@@ -312,6 +332,12 @@
 		"style": {
 			"--tw-text-opacity": 1,
 			"color": "rgb(37 99 235 / var(--tw-text-opacity))"
+		}
+	},
+	"text-sky-500": {
+		"style": {
+			"--tw-text-opacity": 1,
+			"color": "rgb(14 165 233 / var(--tw-text-opacity))"
 		}
 	}
 }

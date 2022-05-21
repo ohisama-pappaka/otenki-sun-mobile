@@ -4,7 +4,7 @@ import { useTailwind } from "tailwind-rn";
 
 const DisplayWeatherCard = () => {
   const tailwind = useTailwind();
-  const sunnyImagePath = "src/img/sunny.png";
+  const sunnyImagePath = "https://bit.ly/3wJSkrf";
   const highestTemperature = 30;
   const lowestTemperature = -40;
 
@@ -13,7 +13,9 @@ const DisplayWeatherCard = () => {
       <Text style={tailwind("text-center text-2xl")}>東京 / 晴れ</Text>
       <Image
         style={tailwind("w-24 h-24 self-center")}
-        source={require(sunnyImagePath)}
+        source={{
+          uri: sunnyImagePath,
+        }}
       />
       <Text style={tailwind("text-center text-amber-500")}>
         最高気温 {highestTemperature}℃

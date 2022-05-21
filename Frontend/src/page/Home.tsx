@@ -1,16 +1,10 @@
 import React from "react";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from "react-native";
+import { useColorScheme, View } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
 import Main from "src/components/home/Main";
 import Footer from "src/components/footer/Footer";
-import { useTailwind } from "tailwind-rn/";
+import { useTailwind } from "tailwind-rn";
 
 const Home = () => {
   const isDarkMode = useColorScheme() === "dark";
