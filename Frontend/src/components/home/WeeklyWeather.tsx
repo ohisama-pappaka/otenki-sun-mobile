@@ -4,21 +4,22 @@ import { useTailwind } from "tailwind-rn";
 import { Table, Row, TableWrapper, Cell } from "react-native-table-component";
 import axios from "axios";
 
-type Props = {
-  selectedPrefectureName: string;
-  selectedCityName: string;
-};
+import { useAppSelector } from "src/hooks/hooks";
 
-const DisplayWeeklyWeather = ({
-  selectedPrefectureName,
-  selectedCityName,
-}: Props) => {
+const selectedPrefectureName = useAppSelector((state) => state.prefectureName);
+const selectedCityName = useAppSelector((state) => state.cityName);
+
+const DisplayWeeklyWeather = () => {
   const tailwind = useTailwind();
   const [weatherDataList, setWeatherDataList] = useState<string[][]>([]);
 
   // Weekly の天気データの取得
   useEffect(() => {
-    const url = "http://10.0.2.2:8000/weekly";
+    const url =
+      "http://10.0.2.2:8000/weekly/" +
+      selectedPrefectureName +
+      "/" +
+      selectedCityName;
     axios
       .get(url)
       .then((res) => {
