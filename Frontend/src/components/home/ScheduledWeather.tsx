@@ -3,7 +3,7 @@ import { Image, Text, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
 import { Table, Row, TableWrapper, Cell } from "react-native-table-component";
 
-const DisplayWeeklyWeather = () => {
+const ScheduledWeather = () => {
   const tailwind = useTailwind();
 
   // ダミーデータ 後に削除
@@ -15,19 +15,21 @@ const DisplayWeeklyWeather = () => {
     "降水確率(%)",
   ];
   const tableData = [
-    ["1/1", "https://bit.ly/3wJSkrf", "30", "-20", "30"],
-    ["1/2", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/3", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/4", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/5", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/6", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
+    ["1/10", "https://bit.ly/3wJSkrf", "30", "-20", "30"],
+    ["1/11", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
+    ["1/12", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
+    ["1/13", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
+    ["1/14", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
+    ["1/15", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
   ];
 
   return (
     <>
-      <Text style={tailwind("pt-4 pl-2 text-lg text-sky-500")}>週間天気</Text>
+      <Text style={tailwind("pt-4 pl-2 text-lg text-sky-500")}>
+        予定日の天気
+      </Text>
       <View>
-        <Table style={tailwind("border-0 pr-3")}>
+        <Table style={tailwind("border-0 pr-3 pb-8")}>
           <Row
             data={tableHead}
             // FIXME: style={tailwind{}} で text のスタイルを指定しても反映されなかった
@@ -63,4 +65,5 @@ const DisplayWeeklyWeather = () => {
     </>
   );
 };
-export default DisplayWeeklyWeather;
+
+export default ScheduledWeather;

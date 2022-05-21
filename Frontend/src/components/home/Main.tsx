@@ -3,6 +3,7 @@ import React from "react";
 import DailyWeatherCard from "src/components/home/DailyWeather";
 import HourlyWeather from "src/components/home/HourlyWeather";
 import WeeklyWeather from "src/components/home/WeeklyWeather";
+import ScheduledWeather from "src/components/home/ScheduledWeather";
 
 const Body = () => {
   return (
@@ -10,6 +11,7 @@ const Body = () => {
       <DailyWeatherCard />
       <HourlyWeather />
       <WeeklyWeather />
+      <ScheduledWeather />
     </>
   );
 };

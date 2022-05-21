@@ -25,7 +25,7 @@ const Home = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}
       >
-        <View style={{ height: 733 }}>
+        <View>
           {/* FIXME: 現状 Body の要素が増えると途中で見切れてしまう */}
           <View style={{ flex: 12 }}>
             <Main />

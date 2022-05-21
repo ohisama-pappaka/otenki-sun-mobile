@@ -253,14 +253,19 @@
 			"paddingRight": 12
 		}
 	},
-	"pt-2": {
+	"pt-4": {
 		"style": {
-			"paddingTop": 8
+			"paddingTop": 16
 		}
 	},
 	"pl-2": {
 		"style": {
 			"paddingLeft": 8
+		}
+	},
+	"pb-8": {
+		"style": {
+			"paddingBottom": 32
 		}
 	},
 	"text-center": {
