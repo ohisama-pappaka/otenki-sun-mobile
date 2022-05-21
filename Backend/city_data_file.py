@@ -1,9 +1,8 @@
 import sqlite3
 import main
 
-dbname = 'Weather.db'
-dataname = main.prefe_name
-city_list =[]
+dbname = "Weather.db"
+city_list = []
 
 conn = sqlite3.connect(dbname)
 cur = conn.cursor()
@@ -32,18 +31,32 @@ cur = conn.cursor()
 # cur.execute('INSERT INTO "山口県"(name,code,ex_name) values("萩",350040,"Hagi")')
 conn.commit()
 
-cur.execute('SELECT count(*) FROM %s'%dataname) #件数検索
-list = cur.fetchall()
-data_sum = list[0][0]
 
-cur.execute('SELECT * FROM %s'%dataname)#県名から市のなまえを出力
-list = cur.fetchall()
-for i in range(0,data_sum):
-  city_list.append(list[i][1])
+def FetchCityList(name: str):
+    city_list = []
+    conn = sqlite3.connect(dbname)
+    cur = conn.cursor()
+    cur.execute("SELECT count(*) FROM %s" % name)  # 件数検索
+    list = cur.fetchall()
+    data_sum = list[0][0]
 
-cur.execute('SELECT * FROM %s WHERE name= ? '%dataname,(city_list[3],))#選ばれた市の名前からデータを持ってくる
-list = cur.fetchone()
+    cur.execute("SELECT * FROM %s" % name)  # 県名から市のなまえを出力
+    list = cur.fetchall()
+    for i in range(0, data_sum):
+        city_list.append(list[i][1])
+
+    return city_list
 
 
-sub_id = list[2]
-sub_name = list[3]
+def FetchCityData(name: str):
+    conn = sqlite3.connect(dbname)
+    cur = conn.cursor()
+    cur.execute(
+        "SELECT * FROM %s WHERE name= ? " % data_name, (name,)
+    )  # 選ばれた市の名前からデータを持ってくる
+    list = cur.fetchone()
+
+    sub_id = list[2]
+    sub_name = list[3]
+
+    return sub_id, sub_name
