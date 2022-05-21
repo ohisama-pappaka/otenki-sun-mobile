@@ -27,24 +27,16 @@ const Others = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}
       >
-        <View
-          style={tailwind("p-5 text-current text-center")}
-        >
-          <Button
-            title="Q&A"
-          />
+        <View style={tailwind("p-5 text-current text-center")}>
+          <Button title="Q&A" />
         </View>
-        <View
-          style={tailwind("p-5 text-current text-center")}
-        >
+        <View style={tailwind("p-5 text-current text-center")}>
           <Button
             title="地点の追加/変更/削除"
             onPress={() => navigation.navigate("PointRegistration")}
           />
         </View>
-        <View
-          style={tailwind("p-5 text-current text-center")}
-        >
+        <View style={tailwind("p-5 text-current text-center")}>
           <Button
             title="予定日の追加/変更/削除"
             onPress={() => navigation.navigate("DateRegistration")}
