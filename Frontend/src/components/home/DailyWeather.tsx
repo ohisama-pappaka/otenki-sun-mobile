@@ -29,7 +29,7 @@ const DisplayWeatherCard = ({
     <View style={tailwind("h-52 rounded-md p-4 m-4")}>
       <Text style={tailwind("text-center text-2xl")}>
         {selectedPrefectureName}
-        {selectedCityName}
+        {selectedCityName}市
       </Text>
       <Image
         style={tailwind("w-24 h-24 self-center")}

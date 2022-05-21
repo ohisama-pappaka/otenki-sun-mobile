@@ -19,7 +19,11 @@ const Body = () => {
 
   // Daily & Hourly の天気データの取得
   useEffect(() => {
-    const url = "http://10.0.2.2:8000/daily";
+    const url =
+      "http://10.0.2.2:8000/daily/" +
+      selectedPrefectureName +
+      "/" +
+      selectedCityName;
     axios
       .get(url)
       .then((res) => {

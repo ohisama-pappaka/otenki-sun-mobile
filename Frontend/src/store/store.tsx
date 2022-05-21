@@ -1,8 +1,8 @@
 import { createStore } from "redux";
 
 const initialState = {
-  prefectureName: "東京都",
-  cityName: "三鷹市",
+  prefectureName: "山口県",
+  cityName: "萩",
 };
 
 const reducer = (
