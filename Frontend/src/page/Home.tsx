@@ -15,7 +15,7 @@ const Home = () => {
   const tailwind = useTailwind();
 
   return (
-    <View style={tailwind("flex-1 items-center")}>
+    <View style={tailwind("flex-1 items-center w-full")}>
       <Main />
       <View style={tailwind("w-full absolute bottom-0")}>
         <Footer />

@@ -2,29 +2,38 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
 
-const DisplayWeatherCard = () => {
+type Props = {
+  selectedCity: string;
+  weatherData: string[];
+};
+
+const DisplayWeatherCard = ({ selectedCity, weatherData }: Props) => {
   const tailwind = useTailwind();
-  const sunnyImagePath = "https://bit.ly/3wJSkrf";
-  const highestTemperature = 30;
-  const lowestTemperature = -40;
+
+  let weatherImage = "";
+  let highestTemperature = "";
+  let rainyPercent = "";
+
+  if (weatherData.length !== 0) {
+    weatherImage = weatherData[0]["2"];
+    highestTemperature = weatherData[0]["3"];
+    rainyPercent = weatherData[0]["5"];
+  }
 
   return (
     <View style={tailwind("h-52 rounded-md p-4 m-4")}>
-      <Text style={tailwind("text-center text-2xl")}>東京 / 晴れ</Text>
+      <Text style={tailwind("text-center text-2xl")}>{selectedCity}</Text>
       <Image
         style={tailwind("w-24 h-24 self-center")}
         source={{
-          uri: sunnyImagePath,
+          uri: weatherImage,
         }}
       />
-      <Text style={tailwind("text-center text-amber-500")}>
-        最高気温 {highestTemperature}℃
+      <Text style={tailwind("text-center text-amber-500 text-lg")}>
+        気温 {highestTemperature}℃
       </Text>
-      <Text style={tailwind("text-center text-blue-600")}>
-        最低気温 {lowestTemperature}℃
-      </Text>
-      <Text style={tailwind("text-center")}>
-        降水確率(午前) / 降水確率(午後)
+      <Text style={tailwind("text-center text-lg")}>
+        降水確率 {rainyPercent}
       </Text>
     </View>
   );

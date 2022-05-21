@@ -78,6 +78,11 @@
 			"height": 96
 		}
 	},
+	"h-10": {
+		"style": {
+			"height": 40
+		}
+	},
 	"h-6": {
 		"style": {
 			"height": 24
@@ -91,6 +96,16 @@
 	"w-24": {
 		"style": {
 			"width": 96
+		}
+	},
+	"w-10": {
+		"style": {
+			"width": 40
+		}
+	},
+	"w-96": {
+		"style": {
+			"width": 384
 		}
 	},
 	"w-6": {
@@ -326,12 +341,6 @@
 		"style": {
 			"--tw-text-opacity": 1,
 			"color": "rgb(245 158 11 / var(--tw-text-opacity))"
-		}
-	},
-	"text-blue-600": {
-		"style": {
-			"--tw-text-opacity": 1,
-			"color": "rgb(37 99 235 / var(--tw-text-opacity))"
 		}
 	},
 	"text-sky-500": {
