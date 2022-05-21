@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Alert, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={tailwind("h-full bg-sky-500")}>
+    <View style={tailwind("bg-sky-500 w-full")}>
       <View
         style={{
           flexDirection: "row",

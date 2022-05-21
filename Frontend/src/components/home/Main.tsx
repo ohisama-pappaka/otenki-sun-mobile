@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
 import { DataTable } from "react-native-paper";
 
@@ -19,37 +19,35 @@ const Body = () => {
   const lowestTemperature = -40;
 
   return (
-    <>
-      <DisplayWeatherCard />
-
-      <View style={styles.container}>
-        <DataTable>
-          <DataTable.Header>
-            <DataTable.Title>Name</DataTable.Title>
-            <DataTable.Title>Email</DataTable.Title>
-            <DataTable.Title numeric>Age</DataTable.Title>
-          </DataTable.Header>
-
-          <DataTable.Row>
-            <DataTable.Cell>John</DataTable.Cell>
-            <DataTable.Cell>john@kindacode.com</DataTable.Cell>
-            <DataTable.Cell numeric>33</DataTable.Cell>
-          </DataTable.Row>
-
-          <DataTable.Row>
-            <DataTable.Cell>Bob</DataTable.Cell>
-            <DataTable.Cell>test@test.com</DataTable.Cell>
-            <DataTable.Cell numeric>105</DataTable.Cell>
-          </DataTable.Row>
-
-          <DataTable.Row>
-            <DataTable.Cell>Mei</DataTable.Cell>
-            <DataTable.Cell>mei@kindacode.com</DataTable.Cell>
-            <DataTable.Cell numeric>23</DataTable.Cell>
-          </DataTable.Row>
-        </DataTable>
+    <ScrollView>
+      <View style={tailwind("h-40 bg-gray-200")}>
+        <Text> Main Content Here</Text>
       </View>
-    </>
+      <View style={tailwind("h-40 bg-gray-300")}>
+        <Text> Main Content Here</Text>
+      </View>
+      <View style={tailwind("h-40 bg-gray-400")}>
+        <Text> Main Content Here</Text>
+      </View>
+      <View style={tailwind("h-40 bg-gray-500")}>
+        <Text> Main Content Here</Text>
+      </View>
+      <View style={tailwind("h-40 bg-gray-600")}>
+        <Text> Main Content Here</Text>
+      </View>
+      <View style={tailwind("h-40 bg-gray-500")}>
+        <Text> Main Content Here</Text>
+      </View>
+      <View style={tailwind("h-40 bg-gray-400")}>
+        <Text> Main Content Here</Text>
+      </View>
+      <View style={tailwind("h-40 bg-gray-300")}>
+        <Text> Main Content Here</Text>
+      </View>
+      <View style={tailwind("h-40 bg-gray-200")}>
+        <Text> Main Content Here</Text>
+      </View>
+    </ScrollView>
   );
 };
 export default Body;
