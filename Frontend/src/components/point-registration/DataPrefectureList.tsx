@@ -45,14 +45,12 @@ export const dataPrefecture = [
   { label: "大分県", value: "大分県" },
   { label: "宮崎県", value: "宮崎県" },
   { label: "鹿児島県", value: "鹿児島県" },
-  { label: "沖縄県", value: "沖縄県" }
+  { label: "沖縄県", value: "沖縄県" },
 ];
 
 export const dummyDataCity = [
-  { label: "札幌市", value: "札幌市" },
-  { label: "函館市", value: "函館市" },
-  { label: "小樽市", value: "小樽市" },
-  { label: "旭川市", value: "旭川市" },
-  { label: "室蘭市", value: "室蘭市" },
-  { label: "釧路市", value: "釧路市" },
+  { label: "下関", value: "下関" },
+  { label: "山口", value: "山口" },
+  { label: "柳井", value: "柳井" },
+  { label: "萩", value: "萩" },
 ];
