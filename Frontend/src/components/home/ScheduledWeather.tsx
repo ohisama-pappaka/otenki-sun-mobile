@@ -30,7 +30,7 @@ const ScheduledWeather = () => {
       </Text>
       {tableData[0][0] !== undefined ? (
         <View>
-          <Table style={tailwind("border-0 pr-3 pb-8")}>
+          <Table style={tailwind("border-0 pr-3 pb-24")}>
             <Row
               data={tableHead}
               // FIXME: style={tailwind{}} で text のスタイルを指定しても反映されなかった
