@@ -1,4 +1,4 @@
-import React, { useDebugValue, useEffect } from "react";
+import React from "react";
 import { Image, Text, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
 
@@ -10,10 +10,15 @@ type Props = {
 const DisplayWeatherCard = ({ selectedCity, weatherData }: Props) => {
   const tailwind = useTailwind();
 
-  const weatherImage = weatherData[0]["2"];
-  const highestTemperature = weatherData[0]["3"];
-  const lowestTemperature = weatherData[0]["1"];
-  const rainyPercent = weatherData[0]["5"];
+  let weatherImage = "";
+  let highestTemperature = "";
+  let rainyPercent = "";
+
+  if (weatherData.length !== 0) {
+    weatherImage = weatherData[0]["2"];
+    highestTemperature = weatherData[0]["3"];
+    rainyPercent = weatherData[0]["5"];
+  }
 
   return (
     <View style={tailwind("h-52 rounded-md p-4 m-4")}>
@@ -25,10 +30,7 @@ const DisplayWeatherCard = ({ selectedCity, weatherData }: Props) => {
         }}
       />
       <Text style={tailwind("text-center text-amber-500")}>
-        最高気温 {highestTemperature}℃
-      </Text>
-      <Text style={tailwind("text-center text-blue-600")}>
-        最低気温 {lowestTemperature}℃
+        気温 {highestTemperature}℃
       </Text>
       <Text style={tailwind("text-center")}>降水確率 {rainyPercent}</Text>
     </View>

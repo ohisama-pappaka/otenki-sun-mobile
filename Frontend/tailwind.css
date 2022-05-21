@@ -52,8 +52,8 @@
   height: 6rem
 }
 
-.h-20 {
-  height: 5rem
+.h-10 {
+  height: 2.5rem
 }
 
 .h-6 {
@@ -66,6 +66,10 @@
 
 .w-24 {
   width: 6rem
+}
+
+.w-10 {
+  width: 2.5rem
 }
 
 .w-96 {
