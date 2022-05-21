@@ -63,11 +63,6 @@
 			"height": "100%"
 		}
 	},
-	"h-6": {
-		"style": {
-			"height": 24
-		}
-	},
 	"h-52": {
 		"style": {
 			"height": 208
@@ -78,14 +73,19 @@
 			"height": 96
 		}
 	},
-	"w-6": {
+	"h-6": {
 		"style": {
-			"width": 24
+			"height": 24
 		}
 	},
 	"w-24": {
 		"style": {
 			"width": 96
+		}
+	},
+	"w-6": {
+		"style": {
+			"width": 24
 		}
 	},
 	"flex-1": {
@@ -246,11 +246,6 @@
 		"style": {
 			"paddingTop": 40,
 			"paddingBottom": 40
-		}
-	},
-	"pt-0": {
-		"style": {
-			"paddingTop": 0
 		}
 	},
 	"text-center": {
