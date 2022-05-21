@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
-import Body from "src/components/body/Body";
+import Main from "src/components/home/Main";
 import Footer from "src/components/footer/Footer";
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
         {/* <View style={{ height: 733 }}> */}
         {/* FIXME: 現状 Body の要素が増えると途中で見切れてしまう */}
         <View style={{ flex: 12 }}>
-          <Body />
+          <Main />
         </View>
         <View style={{ flex: 1 }}>
           <Footer />
