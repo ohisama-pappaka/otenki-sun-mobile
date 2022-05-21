@@ -3,8 +3,8 @@ import { View } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
 import { useTailwind } from "tailwind-rn";
 
-import { dummyDataPrefecture } from "src/components/point-registration/DummyData";
-import { dummyDataCity } from "src/components/point-registration/DummyData";
+import { dataPrefecture } from "src/components/point-registration/DataPrefectureList";
+import { dummyDataCity } from "src/components/point-registration/DataPrefectureList";
 
 type Props = {
   selectedPrefecture: string;
@@ -25,7 +25,7 @@ const SelectPoint = ({
     <View style={tailwind("flex-1 items-center justify-center")}>
       <RNPickerSelect
         placeholder={{ label: "都道府県を選択してください", value: "" }}
-        items={dummyDataPrefecture}
+        items={dataPrefecture}
         onValueChange={(value) => {
           setSelectedPrefecture(value);
         }}
