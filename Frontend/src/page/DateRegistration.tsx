@@ -14,7 +14,7 @@ import { useTailwind } from "tailwind-rn";
 import InputDate from "src/components/date-registration/InputDate";
 import Validation from "src/components/date-registration/Validation";
 import RegistrationList from "src/components/date-registration/RegistrationList";
-import { storage } from "src/components/date-registration/DateStorage";
+import { storage } from "src/components/storage/Storage";
 
 const DateRegistration = () => {
   const isDarkMode = useColorScheme() === "dark";
@@ -30,7 +30,6 @@ const DateRegistration = () => {
   const [isOverlappingVali, setIsOverlappingVali] = useState<boolean>(false);
   const [isInputNull, setIsInputNull] = useState<boolean>(false);
   const [overlappingData, setOverlappingData] = useState<string>("");
-  const [keepDateList, setKeepDateList] = useState<string[]>([]);
   const [dateData, setDateData] = useState<string[]>([]);
   const RegistrationDate = () => {
     const addData = inputYear + "年" + inputMonth + "月" + inputDay + "日";
