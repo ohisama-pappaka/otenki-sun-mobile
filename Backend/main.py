@@ -66,6 +66,11 @@ async def favicon():
     return FileResponse(favicon_path)
 
 
+@app.get("/")
+def root():
+    return {"Hello FastAPI!!"}
+
+
 @app.get("/daily/")
 def day():
 
