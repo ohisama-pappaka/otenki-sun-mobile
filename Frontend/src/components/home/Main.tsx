@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View, } from "react-native";
 import { useTailwind } from "tailwind-rn";
 import { DataTable } from "react-native-paper";
 
@@ -16,6 +16,6 @@ const Body = () => {
       <WeeklyWeather />
       <ScheduledWeather />
     </ScrollView>
-  );
+  ); 
 };
 export default Body;

@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction, useCallback } from "react";
 import { View, Modal, Pressable, Text } from "react-native";
 import { useTailwind } from "tailwind-rn";
 import { useNavigation } from "@react-navigation/native";
+import { storage } from "src/components/storage/Storage";
 
 type Props = {
   selectedPrefecture: string;
@@ -50,7 +51,11 @@ const Confirmation = ({
                   "rounded-lg border-2 border-gray-500 p-2 m-2 bg-white"
                 )}
                 // XXX: 警告が出ていることは確認している
-                onPress={() => navigation.navigate("Home")}
+                onPress={() => {
+                  storage.save({ key: 'Point', data: [selectedPrefecture,selectedCity] });
+                  navigation.navigate("Home")
+                }}
+                
               >
                 <Text style={tailwind("font-bold text-center")}>登録する</Text>
               </Pressable>

@@ -33,7 +33,7 @@ const DateRegistration = () => {
   const [dateData, setDateData] = useState<string[]>([]);
   const RegistrationDate = () => {
     const addData = inputYear + "年" + inputMonth + "月" + inputDay + "日";
-    storage.load({ key: "Data" }).then((data) => {
+    storage.load({ key: "Date" }).then((data) => {
       setDateData(data);
     });
 
@@ -45,7 +45,7 @@ const DateRegistration = () => {
     } else {
       dateData.push(addData);
       //setKeepDateList(dateData);
-      storage.save({ key: "Data", data: dateData });
+      storage.save({ key: "Date", data: dateData });
     }
   };
 
@@ -72,7 +72,7 @@ const DateRegistration = () => {
         >
           <TouchableHighlight onPress={RegistrationDate}>
             <Text style={tailwind("text-white font-bold text-center")}>
-              登録する!
+              登録する
             </Text>
           </TouchableHighlight>
         </View>

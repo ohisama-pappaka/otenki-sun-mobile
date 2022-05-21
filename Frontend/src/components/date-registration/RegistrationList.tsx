@@ -8,7 +8,7 @@ const RegistrationList = () => {
   const [dateData, setDateData] = useState<string[]>([]);
 
   storage
-    .load({ key: "Data" })
+    .load({ key: "Date" })
     .then((data) => {
       setDateData(data);
     })
