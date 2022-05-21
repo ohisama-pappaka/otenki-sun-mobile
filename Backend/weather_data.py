@@ -1,0 +1,49 @@
+import sqlite3
+import main
+
+dbname = 'Weather.db'
+dataname = main.prefe_name
+city_list =[]
+
+conn = sqlite3.connect(dbname)
+cur = conn.cursor()
+# cur.execute('CREATE TABLE "北海道"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("稚内",011000,"Wakkanai")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("旭川",012010,"Asahigawa")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("留萌",012020,"Rumoi")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("札幌",016010,"Sapporo")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("岩見沢",016020,"Iwamizawa")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("倶知安",016030,"kuttyan")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("網走",013010,"Abashiri")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("北見",013020,"Kitami")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("紋別",013030,"Monbetsu")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("根室",014010,"Nemuro")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("釧路",014020,"Kushiro")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("帯広",014030,"Obihiroshi")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("室蘭",015010,"Muran")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("浦河",015020,"Urakawa")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("函館",017010,"Hakodate")')
+# cur.execute('INSERT INTO "北海道"(name,code,ex_name) values("江差",017020,"Esashi")')
+
+# cur.execute('CREATE TABLE "山口県"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)')
+# cur.execute('INSERT INTO "山口県"(name,code,ex_name) values("下関",350010,"Shimonoseki")')
+# cur.execute('INSERT INTO "山口県"(name,code,ex_name) values("山口",350020,"Yamaguchi")')
+# cur.execute('INSERT INTO "山口県"(name,code,ex_name) values("柳井",350030,"Yanagii")')
+# cur.execute('INSERT INTO "山口県"(name,code,ex_name) values("萩",350040,"Hagi")')
+conn.commit()
+
+cur.execute('SELECT count(*) FROM %s'%dataname) #件数検索
+list = cur.fetchall()
+data_sum = list[0][0]
+
+cur.execute('SELECT * FROM %s'%dataname)#県名から市のなまえを出力
+list = cur.fetchall()
+for i in range(0,data_sum):
+  city_list.append(list[i][1])
+
+cur.execute('SELECT * FROM %s WHERE name= ? '%dataname,(city_list[3],))#選ばれた市の名前からデータを持ってくる
+list = cur.fetchone()
+
+
+sub_id = list[2]
+sub_name = list[3]

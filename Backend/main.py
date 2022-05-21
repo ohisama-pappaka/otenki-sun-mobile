@@ -9,7 +9,7 @@ from dateutil import tz
 import numpy as np
 import datetime
 from dateutil import relativedelta
-import data
+import weather_data
 
 # 環境変数を .env から読み込む
 from dotenv import load_dotenv
@@ -21,9 +21,11 @@ favicon_path = "favicon.ico"
 
 API_KEY = os.environ["API_KEY"]
 
-prefe_name = "Yamaguchi"
-city_name = data.sub_name
-ID = data.sub_id
+prefe_name = "山口県"#　ここだけ変える
+
+main_list = weather_data.city_list
+city_name = weather_data.sub_name
+ID = weather_data.sub_id
 
 api = "http://api.openweathermap.org/data/2.5/weather?units=metric&q={city}&APPID={key}"  # 都市名から、座標を求めるAPI
 pre_api = f"https://weather.tsukumijima.net/api/forecast/city/{ID}"  # 降水確率を求める
@@ -31,11 +33,11 @@ local_url = api.format(city=city_name, key=API_KEY)
 
 response = requests.get(local_url)
 pre_res = requests.get(pre_api)
-data = response.json()
+weather_data = response.json()
 weather_json = pre_res.json()
 
-lat = data["coord"]["lat"]  # 座標獲得
-lon = data["coord"]["lon"]  # 座標獲得
+lat = weather_data["coord"]["lat"]  # 座標獲得
+lon = weather_data["coord"]["lon"]  # 座標獲得
 
 week_lat = float(lat)
 week_lon = float(lon)
@@ -76,9 +78,11 @@ def day():
     daily_data = []
     for time_cnt in range(0, 48, 6):
         today = datetime.date.today()
-        day_after = datetime.timedelta(hours=9 + time_cnt)
-
-        output_time = today + day_after  # 日付
+        if (date.hour + time_cnt) > 24:
+            day_after = today.day + 1
+        else :
+            day_after = today.day
+        output_time = (f'{today.month}/{day_after}')  # 日付
         output_hours = (date.hour + time_cnt) % 24  # 時間
         output_weather = main_data["hourly"][time_cnt]["weather"][0]["icon"]  # 　天気情報
         output_temp = main_data["hourly"][time_cnt]["temp"]  # 　気温
@@ -118,7 +122,9 @@ def week():
     for time_cnt in range(0, 6):
 
         day_after = datetime.timedelta(days=time_cnt)
-        week_time = today + day_after
+        day_month = today.month
+        day_day = (today.day + time_cnt) %31
+        week_time = (f'{day_month}/{day_day}')
         week_weather = main_data["daily"][time_cnt]["weather"][0]["icon"]  # 天気アイコン
         week_max = week_data["daily"]["temperature_2m_max"][time_cnt]  # 最高気温
         week_min = week_data["daily"]["temperature_2m_min"][time_cnt]  # 最低気温
