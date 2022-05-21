@@ -23,6 +23,14 @@
 			"marginLeft": 8
 		}
 	},
+	"m-1": {
+		"style": {
+			"marginTop": 4,
+			"marginRight": 4,
+			"marginBottom": 4,
+			"marginLeft": 4
+		}
+	},
 	"m-4": {
 		"style": {
 			"marginTop": 16,
@@ -129,6 +137,14 @@
 			"borderLeftWidth": 2
 		}
 	},
+	"border-0": {
+		"style": {
+			"borderTopWidth": 0,
+			"borderRightWidth": 0,
+			"borderBottomWidth": 0,
+			"borderLeftWidth": 0
+		}
+	},
 	"border-sky-500": {
 		"style": {
 			"--tw-border-opacity": 1,
@@ -202,6 +218,14 @@
 			"paddingRight": 0,
 			"paddingBottom": 0,
 			"paddingLeft": 0
+		}
+	},
+	"p-1": {
+		"style": {
+			"paddingTop": 4,
+			"paddingRight": 4,
+			"paddingBottom": 4,
+			"paddingLeft": 4
 		}
 	},
 	"p-4": {
