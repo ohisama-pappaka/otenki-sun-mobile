@@ -10,10 +10,6 @@
   margin: 0.5rem
 }
 
-.m-1 {
-  margin: 0.25rem
-}
-
 .m-4 {
   margin: 1rem
 }
@@ -44,12 +40,20 @@
   height: 100%
 }
 
+.h-6 {
+  height: 1.5rem
+}
+
 .h-52 {
   height: 13rem
 }
 
 .h-24 {
   height: 6rem
+}
+
+.w-6 {
+  width: 1.5rem
 }
 
 .w-24 {
@@ -137,10 +141,6 @@
 
 .p-0 {
   padding: 0px
-}
-
-.p-1 {
-  padding: 0.25rem
 }
 
 .p-4 {
