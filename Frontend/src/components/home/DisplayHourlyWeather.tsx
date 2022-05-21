@@ -45,7 +45,7 @@ const DisplayHourlyWeather = () => {
 
   return (
     <View style={tailwind("flex-1")}>
-      <Table style={tailwind("border-0")}>
+      <Table style={tailwind("border-0 m-2")}>
         <Row
           data={tableHead}
           // FIXME: style={tailwind{}} で text のスタイルを指定しても反映されなかった

@@ -248,6 +248,11 @@
 			"paddingBottom": 40
 		}
 	},
+	"pt-0": {
+		"style": {
+			"paddingTop": 0
+		}
+	},
 	"text-center": {
 		"style": {
 			"textAlign": "center"
