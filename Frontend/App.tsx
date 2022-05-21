@@ -11,7 +11,6 @@ import PointRegistration from "src/page/PointRegistration";
 import Others from "src/page/Others";
 
 const Stack = createStackNavigator();
-const tailwind = useTailwind();
 
 const App = () => (
   // XXX: Error を出してるが解消方法がわからない。ただ普通に動く
@@ -25,10 +24,26 @@ const App = () => (
           },
         }}
       >
-        <Stack.Screen name="Home" component={Home}  options={{ title: '今日の天気', headerTitleAlign: 'center' }}/>
-        <Stack.Screen name="DateRegistration" component={DateRegistration}  options={{ title: '予定日の変更・削除', headerTitleAlign: 'center' }}/>
-        <Stack.Screen name="PointRegistration" component={PointRegistration}  options={{ title: '登録地点変更', headerTitleAlign: 'center' }}/>
-        <Stack.Screen name="Others" component={Others}  options={{ title: 'その他', headerTitleAlign: 'center' }}/>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ title: "今日の天気", headerTitleAlign: "center" }}
+        />
+        <Stack.Screen
+          name="DateRegistration"
+          component={DateRegistration}
+          options={{ title: "予定日の変更・削除", headerTitleAlign: "center" }}
+        />
+        <Stack.Screen
+          name="PointRegistration"
+          component={PointRegistration}
+          options={{ title: "登録地点変更", headerTitleAlign: "center" }}
+        />
+        <Stack.Screen
+          name="Others"
+          component={Others}
+          options={{ title: "その他", headerTitleAlign: "center" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   </TailwindProvider>
