@@ -29,10 +29,12 @@ const DisplayWeatherCard = ({ selectedCity, weatherData }: Props) => {
           uri: weatherImage,
         }}
       />
-      <Text style={tailwind("text-center text-amber-500")}>
+      <Text style={tailwind("text-center text-amber-500 text-lg")}>
         気温 {highestTemperature}℃
       </Text>
-      <Text style={tailwind("text-center")}>降水確率 {rainyPercent}</Text>
+      <Text style={tailwind("text-center text-lg")}>
+        降水確率 {rainyPercent}
+      </Text>
     </View>
   );
 };
