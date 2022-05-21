@@ -10,13 +10,15 @@ import { Colors } from "react-native/Libraries/NewAppScreen";
 
 import Main from "src/components/home/Main";
 import Footer from "src/components/footer/Footer";
+import { useTailwind } from "tailwind-rn";
 
 const Home = () => {
   const isDarkMode = useColorScheme() === "dark";
-
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  const tailwind = useTailwind();
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -27,10 +29,10 @@ const Home = () => {
       >
         <View>
           {/* FIXME: 現状 Body の要素が増えると途中で見切れてしまう */}
-          <View style={{ flex: 12 }}>
+          <View>
             <Main />
           </View>
-          <View style={{ flex: 1 }}>
+          <View>
             <Footer />
           </View>
         </View>
