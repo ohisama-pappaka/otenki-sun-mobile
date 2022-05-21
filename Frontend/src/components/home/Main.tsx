@@ -33,7 +33,7 @@ const Body = () => {
         weatherData={dAndHWeatherData}
       />
       <HourlyWeather weatherDataList={dAndHWeatherData} />
-      <WeeklyWeather />
+      <WeeklyWeather selectedCity={selectedCity} />
       <ScheduledWeather />
     </ScrollView>
   );

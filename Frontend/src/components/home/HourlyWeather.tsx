@@ -15,18 +15,6 @@ const DisplayHourlyWeather = ({ weatherDataList }: Props) => {
   let hourlyDataList: string[][] = [];
 
   // FIXME: ベタ書きの記述になっているところを一括で取得できるようにしたい
-  // if (weatherDataList.length !== 0) {
-  //   weatherDataList.map((weatherData) => {
-  //     const addData = [
-  //       weatherData["1"],
-  //       weatherData["2"],
-  //       weatherData["3"],
-  //       weatherData["5"],
-  //     ];
-  //     hourlyDataList.push(addData);
-  //   });
-  // }
-
   if (weatherDataList.length !== 0) {
     hourlyDataList = [
       [
