@@ -1,7 +1,6 @@
 import React from "react";
 import { Image, Text, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
-import { useAppSelector } from "src/hooks/hooks";
 
 type Props = {
   selectedCity: string;
@@ -20,8 +19,6 @@ const DisplayWeatherCard = ({ selectedCity, weatherData }: Props) => {
     highestTemperature = weatherData[0]["3"];
     rainyPercent = weatherData[0]["5"];
   }
-
-  const cityName = useAppSelector((state) => state.cityName);
 
   return (
     <View style={tailwind("h-52 rounded-md p-4 m-4")}>
