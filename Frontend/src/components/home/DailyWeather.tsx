@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Image, Text, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
 import { storage } from "../storage/Storage";
@@ -8,15 +8,18 @@ const DisplayWeatherCard = () => {
   const sunnyImagePath = "https://bit.ly/3wJSkrf";
   const highestTemperature = 30;
   const lowestTemperature = -40;
-  const [pointData, setPointData] = useState<string[]>(['東京都三鷹市']);
-
-  storage
+  const [pointData, setPointData] = useState<string>('東京都三鷹市');
+  
+  useEffect(() => {
+    console.log('aaa')
+    storage
     .load({ key: "Point" })
     .then((data) => {
       setPointData(data);
+      
     })
-    .catch((err) => console.warn(err));
-
+    .catch((err) => console.warn(err));}, [])
+  
   return (
     <View style={tailwind("h-52 rounded-md p-4 m-4")}>
       <Text style={tailwind("text-center text-2xl")}>{pointData} / 晴れ</Text>
