@@ -34,7 +34,6 @@ const DateRegistration = () => {
   const RegistrationDate = () => {
     const addData = inputYear + "年" + inputMonth + "月" + inputDay + "日";
     storage.load({ key: "Data" }).then((data) => {
-      console.log(data);
       setDateData(data);
     });
 
@@ -44,9 +43,7 @@ const DateRegistration = () => {
       setOverlappingData(addData);
       setIsOverlappingVali(true);
     } else {
-      console.log(dateData);
       dateData.push(addData);
-      console.log(dateData);
       //setKeepDateList(dateData);
       storage.save({ key: "Data", data: dateData });
     }
