@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction, useCallback } from "react";
 import { View, Modal, Pressable, Text } from "react-native";
 import { useTailwind } from "tailwind-rn";
 import { useNavigation } from "@react-navigation/native";
+import { useAppDispatch } from "src/hooks/hooks";
 
 type Props = {
   selectedPrefecture: string;
@@ -22,6 +23,7 @@ const Confirmation = ({
 }: Props) => {
   const tailwind = useTailwind();
   const navigation = useNavigation();
+  const dispatch = useAppDispatch();
 
   // キャンセル時の入力データのクリア
   const onRefresh = useCallback(() => {
@@ -50,7 +52,14 @@ const Confirmation = ({
                   "rounded-lg border-2 border-gray-500 p-2 m-2 bg-white"
                 )}
                 // XXX: 警告が出ていることは確認している
-                onPress={() => navigation.navigate("Home")}
+                onPress={() => {
+                  const newCityName = selectedPrefecture + selectedCity;
+                  dispatch({
+                    type: "CHANGE_INPUT_TEXT",
+                    cityName: newCityName,
+                  });
+                  navigation.navigate("Home");
+                }}
               >
                 <Text style={tailwind("font-bold text-center")}>登録する</Text>
               </Pressable>

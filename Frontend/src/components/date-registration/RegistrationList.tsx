@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Text, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
-import { storage } from "src/components/date-registration/DateStorage";
+import { storage } from "src/components/storage/Storage";
 
 const RegistrationList = () => {
   const tailwind = useTailwind();
   const [dateData, setDateData] = useState<string[]>([]);
 
   storage
-    .load({ key: "Data" })
+    .load({ key: "Date" })
     .then((data) => {
       setDateData(data);
     })

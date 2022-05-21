@@ -14,7 +14,7 @@ import { useTailwind } from "tailwind-rn";
 import InputDate from "src/components/date-registration/InputDate";
 import Validation from "src/components/date-registration/Validation";
 import RegistrationList from "src/components/date-registration/RegistrationList";
-import { storage } from "src/components/date-registration/DateStorage";
+import { storage } from "src/components/storage/Storage";
 
 const DateRegistration = () => {
   const isDarkMode = useColorScheme() === "dark";
@@ -30,14 +30,14 @@ const DateRegistration = () => {
   const [isOverlappingVali, setIsOverlappingVali] = useState<boolean>(false);
   const [isInputNull, setIsInputNull] = useState<boolean>(false);
   const [overlappingData, setOverlappingData] = useState<string>("");
-  const [keepDateList, setKeepDateList] = useState<string[]>([]);
   const [dateData, setDateData] = useState<string[]>([]);
   const RegistrationDate = () => {
     const addData = inputYear + "年" + inputMonth + "月" + inputDay + "日";
-    storage.load({ key: "Data" }).then((data) => {
-      console.log(data);
-      setDateData(data);
-    });
+    storage
+      .load({ key: "Date" })
+      .then((data) => {
+        setDateData(data);
+      });
 
     if (inputYear === "" || inputMonth === "" || inputDay === "") {
       setIsInputNull(true);
@@ -45,11 +45,8 @@ const DateRegistration = () => {
       setOverlappingData(addData);
       setIsOverlappingVali(true);
     } else {
-      console.log(dateData);
       dateData.push(addData);
-      console.log(dateData);
-      //setKeepDateList(dateData);
-      storage.save({ key: "Data", data: dateData });
+      storage.save({ key: "Date", data: dateData });
     }
   };
 
@@ -76,7 +73,7 @@ const DateRegistration = () => {
         >
           <TouchableHighlight onPress={RegistrationDate}>
             <Text style={tailwind("text-white font-bold text-center")}>
-              登録する!
+              登録する
             </Text>
           </TouchableHighlight>
         </View>
