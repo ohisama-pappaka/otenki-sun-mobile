@@ -1,26 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Image, Text, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
 import { Table, Row, TableWrapper, Cell } from "react-native-table-component";
+import axios from "axios";
 
-const DisplayWeeklyWeather = () => {
+type Props = {
+  selectedCity: string;
+};
+
+const DisplayWeeklyWeather = ({ selectedCity }: Props) => {
   const tailwind = useTailwind();
+  const [weatherDataList, setWeatherDataList] = useState<string[][]>([]);
 
-  // ダミーデータ 後に削除
+  // Weekly の天気データの取得
+  useEffect(() => {
+    const url = "http://10.0.2.2:8000/weekly";
+    axios
+      .get(url)
+      .then((res) => {
+        setWeatherDataList(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [selectedCity]);
+
   const tableHead = [
     "日付",
     "天気",
     "最高気温(℃)",
     "最低気温(℃)",
     "降水確率(%)",
-  ];
-  const tableData = [
-    ["1/1", "https://bit.ly/3wJSkrf", "30", "-20", "30"],
-    ["1/2", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/3", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/4", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/5", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/6", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
   ];
 
   return (
@@ -35,8 +45,7 @@ const DisplayWeeklyWeather = () => {
               textAlign: "center",
             }}
           />
-
-          {tableData.map((rowData, index) => (
+          {weatherDataList.map((rowData, index) => (
             <TableWrapper key={index} style={tailwind("flex-row")}>
               {rowData.map((cellData, cellIndex) => (
                 <Cell
@@ -44,7 +53,7 @@ const DisplayWeeklyWeather = () => {
                   data={
                     cellIndex === 1 && cellData ? (
                       <Image
-                        style={tailwind("w-6 h-6 self-center")}
+                        style={tailwind("w-10 h-10 self-center")}
                         source={{
                           uri: cellData,
                         }}

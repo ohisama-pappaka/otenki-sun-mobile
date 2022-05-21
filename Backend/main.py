@@ -82,6 +82,11 @@ def root(name: str):
     return main_list
 
 
+@app.get("/")
+def root():
+    return {"Hello FastAPI!!"}
+
+
 @app.get("/daily/{name}")
 def day(name: str):
     weather_json, main_data, week_data, date = api_set(name)
