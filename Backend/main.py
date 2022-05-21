@@ -9,6 +9,7 @@ from dateutil import tz
 import numpy as np
 import datetime
 from dateutil import relativedelta
+import data
 
 # 環境変数を .env から読み込む
 from dotenv import load_dotenv
@@ -19,10 +20,13 @@ app = FastAPI()
 favicon_path = "favicon.ico"
 
 API_KEY = os.environ["API_KEY"]
-city_name = "Ube"
+
+prefe_name = "Yamaguchi"
+city_name = data.sub_name
+ID = data.sub_id
 
 api = "http://api.openweathermap.org/data/2.5/weather?units=metric&q={city}&APPID={key}"  # 都市名から、座標を求めるAPI
-pre_api = "https://weather.tsukumijima.net/api/forecast/city/350010"  # 降水確率を求める
+pre_api = f"https://weather.tsukumijima.net/api/forecast/city/{ID}"  # 降水確率を求める
 local_url = api.format(city=city_name, key=API_KEY)
 
 response = requests.get(local_url)
