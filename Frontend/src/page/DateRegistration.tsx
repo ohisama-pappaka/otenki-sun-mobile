@@ -76,7 +76,7 @@ const DateRegistration = () => {
         >
           <TouchableHighlight onPress={RegistrationDate}>
             <Text style={tailwind("text-white font-bold text-center")}>
-              登録する
+              登録する!
             </Text>
           </TouchableHighlight>
         </View>
