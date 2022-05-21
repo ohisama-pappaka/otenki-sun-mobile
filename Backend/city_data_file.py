@@ -2,8 +2,7 @@ import sqlite3
 import main
 
 dbname = "Weather.db"
-city_list = []
-prefecture_name
+
 conn = sqlite3.connect(dbname)
 cur = conn.cursor()
 # cur.execute('CREATE TABLE "北海道"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)')
