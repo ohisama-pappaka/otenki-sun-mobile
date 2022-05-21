@@ -6,8 +6,10 @@ import DailyWeatherCard from "src/components/home/DailyWeather";
 import HourlyWeather from "src/components/home/HourlyWeather";
 import WeeklyWeather from "src/components/home/WeeklyWeather";
 import ScheduledWeather from "src/components/home/ScheduledWeather";
+import { useTailwind } from "tailwind-rn";
 
 const Body = () => {
+  const tailwind = useTailwind();
   const [dAndHWeatherData, setDAndHWeatherData] = useState<string[]>([]);
   const selectedCity = "宇部";
 
@@ -25,12 +27,12 @@ const Body = () => {
   }, [selectedCity]);
 
   return (
-    <ScrollView>
+    <ScrollView style={tailwind("w-96")}>
       <DailyWeatherCard
         selectedCity={selectedCity}
         weatherData={dAndHWeatherData}
       />
-      <HourlyWeather />
+      <HourlyWeather weatherData={dAndHWeatherData} />
       <WeeklyWeather />
       <ScheduledWeather />
     </ScrollView>

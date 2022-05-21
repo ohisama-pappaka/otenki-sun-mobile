@@ -52,6 +52,10 @@
   height: 6rem
 }
 
+.h-20 {
+  height: 5rem
+}
+
 .h-6 {
   height: 1.5rem
 }
@@ -62,6 +66,10 @@
 
 .w-24 {
   width: 6rem
+}
+
+.w-96 {
+  width: 24rem
 }
 
 .w-6 {
@@ -225,11 +233,6 @@
 .text-amber-500 {
   --tw-text-opacity: 1;
   color: rgb(245 158 11 / var(--tw-text-opacity))
-}
-
-.text-blue-600 {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity))
 }
 
 .text-sky-500 {
