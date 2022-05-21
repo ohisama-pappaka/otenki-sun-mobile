@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ScrollView, Text } from "react-native";
+import { ScrollView } from "react-native";
 import axios from "axios";
 
 import DailyWeatherCard from "src/components/home/DailyWeather";
