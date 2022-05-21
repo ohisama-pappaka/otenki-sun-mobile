@@ -248,6 +248,21 @@
 			"paddingBottom": 40
 		}
 	},
+	"pr-3": {
+		"style": {
+			"paddingRight": 12
+		}
+	},
+	"pt-2": {
+		"style": {
+			"paddingTop": 8
+		}
+	},
+	"pl-2": {
+		"style": {
+			"paddingLeft": 8
+		}
+	},
 	"text-center": {
 		"style": {
 			"textAlign": "center"
@@ -257,6 +272,12 @@
 		"style": {
 			"fontSize": 24,
 			"lineHeight": 32
+		}
+	},
+	"text-lg": {
+		"style": {
+			"fontSize": 18,
+			"lineHeight": 28
 		}
 	},
 	"font-bold": {
@@ -291,6 +312,12 @@
 		"style": {
 			"--tw-text-opacity": 1,
 			"color": "rgb(37 99 235 / var(--tw-text-opacity))"
+		}
+	},
+	"text-sky-500": {
+		"style": {
+			"--tw-text-opacity": 1,
+			"color": "rgb(14 165 233 / var(--tw-text-opacity))"
 		}
 	}
 }

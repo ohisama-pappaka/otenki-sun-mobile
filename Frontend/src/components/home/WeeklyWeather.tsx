@@ -19,13 +19,15 @@ const DisplayWeeklyWeather = () => {
     ["1/2", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
     ["1/3", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
     ["1/4", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
+    ["1/5", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
+    ["1/6", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
   ];
 
   return (
     <>
-      <Text>週間天気</Text>
-      <View style={tailwind("flex-1 p-0")}>
-        <Table style={tailwind("border-0 m-2 bg-gray-300")}>
+      <Text style={tailwind("pt-2 pl-2 text-lg text-sky-500")}>週間天気</Text>
+      <View>
+        <Table style={tailwind("border-0 pr-3")}>
           <Row
             data={tableHead}
             // FIXME: style={tailwind{}} で text のスタイルを指定しても反映されなかった
