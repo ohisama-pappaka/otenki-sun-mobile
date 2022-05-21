@@ -43,7 +43,9 @@ def home():
 
   main_api = "https://api.openweathermap.org/data/2.5/onecall?lat={city_lat}&lon={city_lon}&units=metric&lang=ja&appid={key}"
 
-  week_api = "https://api.open-meteo.com/v1/forecast?latitude=33.9757&longitude=131.2414&hourly=temperature_2m,precipitation&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_hours&timezone=Asia%2FTokyo"
+
+
+  api = f'https://api.open-meteo.com/v1/forecast?{lat}&{lon}&hourly=temperature_2m,precipitation&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_hours&timezone=Asia%2FTokyo'
 
   main_url = main_api.format(city_lat=lat,city_lon=lon,key = API_KEY)
   main_response = requests.get(main_url)
@@ -68,7 +70,7 @@ def home():
 
   def daily_weather():
 
-   
+  
     daily_data = []
     for time_cnt in range(0,48,6) :
 
