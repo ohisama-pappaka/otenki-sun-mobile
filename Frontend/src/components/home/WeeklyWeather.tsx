@@ -5,10 +5,14 @@ import { Table, Row, TableWrapper, Cell } from "react-native-table-component";
 import axios from "axios";
 
 type Props = {
-  selectedCity: string;
+  selectedPrefectureName: string;
+  selectedCityName: string;
 };
 
-const DisplayWeeklyWeather = ({ selectedCity }: Props) => {
+const DisplayWeeklyWeather = ({
+  selectedPrefectureName,
+  selectedCityName,
+}: Props) => {
   const tailwind = useTailwind();
   const [weatherDataList, setWeatherDataList] = useState<string[][]>([]);
 
@@ -23,8 +27,8 @@ const DisplayWeeklyWeather = ({ selectedCity }: Props) => {
       .catch((error) => {
         console.error(error);
       });
-  }, [selectedCity]);
-
+  }, [selectedPrefectureName, selectedCityName]);
+  selectedCityName;
   const tableHead = [
     "日付",
     "天気",

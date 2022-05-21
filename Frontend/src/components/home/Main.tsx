@@ -12,7 +12,10 @@ import { useAppSelector } from "src/hooks/hooks";
 const Body = () => {
   const tailwind = useTailwind();
   const [dAndHWeatherData, setDAndHWeatherData] = useState<string[]>([]);
-  const selectedCity = useAppSelector((state) => state.cityName);
+  const selectedPrefectureName = useAppSelector(
+    (state) => state.prefectureName
+  );
+  const selectedCityName = useAppSelector((state) => state.cityName);
 
   // Daily & Hourly の天気データの取得
   useEffect(() => {
@@ -25,16 +28,20 @@ const Body = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, [selectedCity]);
+  }, [selectedPrefectureName, selectedCityName]);
 
   return (
     <ScrollView style={tailwind("w-96")}>
       <DailyWeatherCard
-        selectedCity={selectedCity}
+        selectedPrefectureName={selectedPrefectureName}
+        selectedCityName={selectedCityName}
         weatherData={dAndHWeatherData}
       />
       <HourlyWeather weatherDataList={dAndHWeatherData} />
-      <WeeklyWeather selectedCity={selectedCity} />
+      <WeeklyWeather
+        selectedPrefectureName={selectedPrefectureName}
+        selectedCityName={selectedCityName}
+      />
       <ScheduledWeather />
     </ScrollView>
   );
