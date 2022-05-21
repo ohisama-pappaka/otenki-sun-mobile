@@ -1,13 +1,15 @@
 import React from "react";
 
-import DisplayWeatherCard from "src/components/home/DisplayWeatherCard";
-import DisplayHourlyWeather from "src/components/home/DisplayHourlyWeather";
+import DailyWeatherCard from "src/components/home/DailyWeather";
+import HourlyWeather from "src/components/home/HourlyWeather";
+import WeeklyWeather from "src/components/home/WeeklyWeather";
 
 const Body = () => {
   return (
     <>
-      <DisplayWeatherCard />
-      <DisplayHourlyWeather />
+      <DailyWeatherCard />
+      <HourlyWeather />
+      <WeeklyWeather />
     </>
   );
 };
