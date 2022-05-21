@@ -28,40 +28,44 @@ const ScheduledWeather = () => {
       <Text style={tailwind("pt-4 pl-2 text-lg text-sky-500")}>
         予定日の天気
       </Text>
-      <View>
-        <Table style={tailwind("border-0 pr-3 pb-8")}>
-          <Row
-            data={tableHead}
-            // FIXME: style={tailwind{}} で text のスタイルを指定しても反映されなかった
-            textStyle={{
-              textAlign: "center",
-            }}
-          />
+      {tableData[0][0] !== undefined ? (
+        <View>
+          <Table style={tailwind("border-0 pr-3 pb-8")}>
+            <Row
+              data={tableHead}
+              // FIXME: style={tailwind{}} で text のスタイルを指定しても反映されなかった
+              textStyle={{
+                textAlign: "center",
+              }}
+            />
 
-          {tableData.map((rowData, index) => (
-            <TableWrapper key={index} style={tailwind("flex-row")}>
-              {rowData.map((cellData, cellIndex) => (
-                <Cell
-                  key={cellIndex}
-                  data={
-                    cellIndex === 1 && cellData ? (
-                      <Image
-                        style={tailwind("w-6 h-6 self-center")}
-                        source={{
-                          uri: cellData,
-                        }}
-                      />
-                    ) : (
-                      cellData
-                    )
-                  }
-                  textStyle={{ textAlign: "center" }}
-                />
-              ))}
-            </TableWrapper>
-          ))}
-        </Table>
-      </View>
+            {tableData.map((rowData, index) => (
+              <TableWrapper key={index} style={tailwind("flex-row")}>
+                {rowData.map((cellData, cellIndex) => (
+                  <Cell
+                    key={cellIndex}
+                    data={
+                      cellIndex === 1 && cellData ? (
+                        <Image
+                          style={tailwind("w-6 h-6 self-center")}
+                          source={{
+                            uri: cellData,
+                          }}
+                        />
+                      ) : (
+                        cellData
+                      )
+                    }
+                    textStyle={{ textAlign: "center" }}
+                  />
+                ))}
+              </TableWrapper>
+            ))}
+          </Table>
+        </View>
+      ) : (
+        <Text style={tailwind("pb-8")}>予定は登録されていません</Text>
+      )}
     </>
   );
 };
