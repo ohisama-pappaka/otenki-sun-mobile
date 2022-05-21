@@ -22,8 +22,8 @@ favicon_path = "favicon.ico"
 API_KEY = os.environ["API_KEY"]
 
 
-def api_set(name):
-    ID, city_name = city_data_file.FetchCityData(name)
+def api_set(prefecture_name: str, city_name: str):
+    ID, city_name = city_data_file.FetchCityData(prefecture_name, city_name)
     api = "http://api.openweathermap.org/data/2.5/weather?units=metric&q={city}&APPID={key}"  # 都市名から、座標を求めるAPI
     pre_api = f"https://weather.tsukumijima.net/api/forecast/city/{ID}"  # 降水確率を求める
     local_url = api.format(city=city_name, key=API_KEY)
@@ -77,14 +77,14 @@ async def favicon():
 @app.get("/city/{name}")
 def root(name: str):
     main_list = city_data_file.FetchCityList(name)
-    # prefecture_name = name
+    prefecture_name = name
     # main_list = city_data_file.city_list
     return main_list
 
 
-@app.get("/daily/{name}")
-def day(name: str):
-    weather_json, main_data, week_data, date = api_set(name)
+@app.get("/daily/{prefecture_name}/{city_name}")
+def day(prefecture_name: str, city_name: str):
+    weather_json, main_data, week_data, date = api_set(prefecture_name, city_name)
     daily_data = []
     for time_cnt in range(0, 48, 6):
         today = datetime.date.today()
@@ -124,10 +124,10 @@ def day(name: str):
     return daily_data
 
 
-@app.get("/weekly/{name}")
-def week(name: str):
+@app.get("/weekly/{prefecture_name}/{city_name}")
+def week(prefecture_name: str, city_name: str):
     today = datetime.date.today()
-    weather_json, main_data, week_data, date = api_set(name)
+    weather_json, main_data, week_data, date = api_set(prefecture_name, city_name)
     weekly_data = []
     for time_cnt in range(0, 6):
 

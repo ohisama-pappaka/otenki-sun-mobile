@@ -3,7 +3,7 @@ import main
 
 dbname = "Weather.db"
 city_list = []
-
+prefecture_name
 conn = sqlite3.connect(dbname)
 cur = conn.cursor()
 # cur.execute('CREATE TABLE "北海道"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)')
@@ -34,6 +34,7 @@ conn.commit()
 
 def FetchCityList(name: str):
     city_list = []
+    prefecture_name = name
     conn = sqlite3.connect(dbname)
     cur = conn.cursor()
     cur.execute("SELECT count(*) FROM %s" % name)  # 件数検索
@@ -45,14 +46,14 @@ def FetchCityList(name: str):
     for i in range(0, data_sum):
         city_list.append(list[i][1])
 
-    return city_list
+    return city_list, prefecture_name
 
 
-def FetchCityData(name: str):
+def FetchCityData(name: str, name2: str):
     conn = sqlite3.connect(dbname)
     cur = conn.cursor()
     cur.execute(
-        "SELECT * FROM %s WHERE name= ? " % data_name, (name,)
+        "SELECT * FROM %s WHERE name= ? " % name, (name2,)
     )  # 選ばれた市の名前からデータを持ってくる
     list = cur.fetchone()
 
