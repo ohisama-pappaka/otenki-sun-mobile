@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction, useCallback } from "react";
 import { View, Modal, Pressable, Text } from "react-native";
 import { useTailwind } from "tailwind-rn";
 import { useNavigation } from "@react-navigation/native";
-import { useAppDispatch, useAppSelector } from "src/hooks/hooks";
+import { useAppDispatch } from "src/hooks/hooks";
 
 type Props = {
   selectedPrefecture: string;

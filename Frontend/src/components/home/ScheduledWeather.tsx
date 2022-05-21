@@ -14,21 +14,14 @@ const ScheduledWeather = () => {
     "最低気温(℃)",
     "降水確率(%)",
   ];
-  const tableData = [
-    ["1/10", "https://bit.ly/3wJSkrf", "30", "-20", "30"],
-    ["1/11", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/12", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/13", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/14", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-    ["1/15", "https://bit.ly/3wJSkrf", "-20", "-23", "100"],
-  ];
+  const scheduledWeatherDataList: string[] = [];
 
   return (
     <>
       <Text style={tailwind("pt-4 pl-2 text-lg text-sky-500")}>
         予定日の天気
       </Text>
-      {tableData[0][0] !== undefined ? (
+      {scheduledWeatherDataList.length !== 0 ? (
         <View>
           <Table style={tailwind("border-0 pr-3 pb-24")}>
             <Row
@@ -38,9 +31,9 @@ const ScheduledWeather = () => {
                 textAlign: "center",
               }}
             />
-
-            {tableData.map((rowData, index) => (
+            {scheduledWeatherDataList.map((rowData, index) => (
               <TableWrapper key={index} style={tailwind("flex-row")}>
+                {/* XXX: 警告が出ていることは確認している */}
                 {rowData.map((cellData, cellIndex) => (
                   <Cell
                     key={cellIndex}
@@ -64,7 +57,7 @@ const ScheduledWeather = () => {
           </Table>
         </View>
       ) : (
-        <Text style={tailwind("pb-8")}>予定は登録されていません</Text>
+        <Text style={tailwind("pl-2 pb-24")}>予定は登録されていません</Text>
       )}
     </>
   );
