@@ -45,7 +45,7 @@ def FetchCityList(name: str):
     for i in range(0, data_sum):
         city_list.append(list[i][1])
 
-    return city_list, prefecture_name
+    return city_list
 
 
 def FetchCityData(name: str, name2: str):
