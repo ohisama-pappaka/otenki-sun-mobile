@@ -6,6 +6,12 @@ dbname = "Weather.db"
 conn = sqlite3.connect(dbname)
 cur = conn.cursor()
 cur.execute('DROP TABLE IF EXISTS "北海道"')
+cur.execute('DROP TABLE IF EXISTS "青森県"')
+cur.execute('DROP TABLE IF EXISTS "岩手県"')
+cur.execute('DROP TABLE IF EXISTS "宮城県"')
+cur.execute('DROP TABLE IF EXISTS "秋田県"')
+cur.execute('DROP TABLE IF EXISTS "山形県"')
+cur.execute('DROP TABLE IF EXISTS "福島県"')
 cur.execute('DROP TABLE IF EXISTS "山口県"')
 cur.execute(
     'CREATE TABLE "北海道"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code STRING,ex_name STRING)'
@@ -34,6 +40,46 @@ cur.execute('INSERT INTO "山口県"(name,code,ex_name) values("下関","350010"
 cur.execute('INSERT INTO "山口県"(name,code,ex_name) values("山口","350020","Yamaguchi")')
 cur.execute('INSERT INTO "山口県"(name,code,ex_name) values("柳井","350030","Yanagii")')
 cur.execute('INSERT INTO "山口県"(name,code,ex_name) values("萩","350040","Hagi")')
+
+cur.execute(
+    'CREATE TABLE "青森県"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)'
+)
+cur.execute('INSERT INTO "青森県"(name,code,ex_name) values("青森","020010","Aomori")')
+cur.execute('INSERT INTO "青森県"(name,code,ex_name) values("むつ","020020","Mutsu")')
+cur.execute('INSERT INTO "青森県"(name,code,ex_name) values("八戸","020030","Yae")')
+
+cur.execute(
+    'CREATE TABLE "岩手県"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)'
+)
+cur.execute('INSERT INTO "岩手県"(name,code,ex_name) values("盛岡","030010","Morioka")')
+cur.execute('INSERT INTO "岩手県"(name,code,ex_name) values("宮古","030020","Miyako")')
+cur.execute('INSERT INTO "岩手県"(name,code,ex_name) values("大船渡","030030","Oofunato")')
+
+cur.execute(
+    'CREATE TABLE "宮城県"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)'
+)
+cur.execute('INSERT INTO "宮城県"(name,code,ex_name) values("仙台","040010","Sendai")')
+cur.execute('INSERT INTO "宮城県"(name,code,ex_name) values("白石","040020","Shiroishi")')
+
+cur.execute(
+    'CREATE TABLE "秋田県"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)'
+)
+cur.execute('INSERT INTO "秋田県"(name,code,ex_name) values("秋田","050010","Akita")')
+cur.execute('INSERT INTO "秋田県"(name,code,ex_name) values("横手","050020","Yokote")')
+
+cur.execute(
+    'CREATE TABLE "山形県"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)'
+)
+cur.execute('INSERT INTO "山形県"(name,code,ex_name) values("山形","060010","Yamagata")')
+cur.execute('INSERT INTO "山形県"(name,code,ex_name) values("米沢","060020","Yonezawa")')
+cur.execute('INSERT INTO "山形県"(name,code,ex_name) values("酒田","060030","Sakada")')
+
+cur.execute(
+    'CREATE TABLE "福島県"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)'
+)
+cur.execute('INSERT INTO "福島県"(name,code,ex_name) values("福島","070010","Fukushima")')
+cur.execute('INSERT INTO "福島県"(name,code,ex_name) values("小名浜","070020","Onahama")')
+cur.execute('INSERT INTO "福島県"(name,code,ex_name) values("若松","070030","Wakamatsu")')
 conn.commit()
 
 
