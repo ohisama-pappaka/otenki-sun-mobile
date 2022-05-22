@@ -78,8 +78,6 @@ async def favicon():
 @app.get("/city/{name}")
 def root(name: str):
     main_list = city_data_file.FetchCityList(name)
-    prefecture_name = name
-    # main_list = city_data_file.city_list
     return main_list
 
 

@@ -47,10 +47,3 @@ export const dataPrefecture = [
   { label: "鹿児島県", value: "鹿児島県" },
   { label: "沖縄県", value: "沖縄県" },
 ];
-
-export const dummyDataCity = [
-  { label: "下関", value: "下関" },
-  { label: "山口", value: "山口" },
-  { label: "柳井", value: "柳井" },
-  { label: "萩", value: "萩" },
-];
