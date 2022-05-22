@@ -6,11 +6,12 @@ import axios from "axios";
 
 import { useAppSelector } from "src/hooks/hooks";
 
-const selectedPrefectureName = useAppSelector((state) => state.prefectureName);
-const selectedCityName = useAppSelector((state) => state.cityName);
-
 const DisplayWeeklyWeather = () => {
   const tailwind = useTailwind();
+  const selectedPrefectureName = useAppSelector(
+    (state) => state.prefectureName
+  );
+  const selectedCityName = useAppSelector((state) => state.cityName);
   const [weatherDataList, setWeatherDataList] = useState<string[][]>([]);
 
   // Weekly の天気データの取得
