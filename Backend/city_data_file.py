@@ -12,7 +12,11 @@ cur.execute('DROP TABLE IF EXISTS "宮城県"')
 cur.execute('DROP TABLE IF EXISTS "秋田県"')
 cur.execute('DROP TABLE IF EXISTS "山形県"')
 cur.execute('DROP TABLE IF EXISTS "福島県"')
+cur.execute('DROP TABLE IF EXISTS "茨城県"')
+cur.execute('DROP TABLE IF EXISTS "栃木県"')
 cur.execute('DROP TABLE IF EXISTS "山口県"')
+cur.execute('DROP TABLE IF EXISTS "福岡県"')
+cur.execute('DROP TABLE IF EXISTS "熊本県"')
 cur.execute(
     'CREATE TABLE "北海道"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code STRING,ex_name STRING)'
 )
@@ -80,6 +84,35 @@ cur.execute(
 cur.execute('INSERT INTO "福島県"(name,code,ex_name) values("福島","070010","Fukushima")')
 cur.execute('INSERT INTO "福島県"(name,code,ex_name) values("小名浜","070020","Onahama")')
 cur.execute('INSERT INTO "福島県"(name,code,ex_name) values("若松","070030","Wakamatsu")')
+
+
+cur.execute(
+    'CREATE TABLE "福岡県"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)'
+)
+cur.execute('INSERT INTO "福岡県"(name,code,ex_name) values("福岡","400010","Fukuoka")')
+cur.execute('INSERT INTO "福岡県"(name,code,ex_name) values("八幡","400020","Yahata")')
+cur.execute('INSERT INTO "福岡県"(name,code,ex_name) values("飯塚","400030","Iiduka")')
+cur.execute('INSERT INTO "福岡県"(name,code,ex_name) values("久留米","400040","Kurume")')
+
+cur.execute(
+    'CREATE TABLE "熊本県"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)'
+)
+cur.execute('INSERT INTO "熊本県"(name,code,ex_name) values("熊本","430010","Kumamoto")')
+cur.execute('INSERT INTO "熊本県"(name,code,ex_name) values("阿蘇乙姫","430020","Asootohime")')
+cur.execute('INSERT INTO "熊本県"(name,code,ex_name) values("牛深","430030","Ushibuka")')
+cur.execute('INSERT INTO "熊本県"(name,code,ex_name) values("人吉","430040","Hitoyoshi")')
+
+cur.execute(
+    'CREATE TABLE "茨城県"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)'
+)
+cur.execute('INSERT INTO "茨城県"(name,code,ex_name) values("水戸","080010","Mito")')
+cur.execute('INSERT INTO "茨城県"(name,code,ex_name) values("土浦","080020","Tsutiura")')
+
+cur.execute(
+    'CREATE TABLE "栃木県"(id INTEGER PRIMARY KEY AUTOINCREMENT, name STRING,code INTEGER,ex_name STRING)'
+)
+cur.execute('INSERT INTO "栃木県"(name,code,ex_name) values("宇都宮","090010","Utsunomiya")')
+cur.execute('INSERT INTO "栃木県"(name,code,ex_name) values("大田原","090020","Ootahra")')
 conn.commit()
 
 
