@@ -92,9 +92,9 @@ def day(prefecture_name: str, city_name: str):
         else:
             day_after = today.day
         output_time = f"{today.month}/{day_after}"  # 日付
-        output_hours = f"{(date.hour + time_cnt) % 24 }:00"  # 時間
+        output_hours = f"{output_time}/{(date.hour + time_cnt) % 24 }:00"  # 時間
         output_weather = main_data["hourly"][time_cnt]["weather"][0]["icon"]  # 　天気情報
-        output_temp = main_data["hourly"][time_cnt]["temp"]  # 　気温
+        output_temp = round(main_data["hourly"][time_cnt]["temp"])  # 　気温
         output_humidity = main_data["hourly"][time_cnt]["humidity"]  # 湿度
         extra_time = date.hour + time_cnt
         cnt = 0
@@ -135,8 +135,8 @@ def week(prefecture_name: str, city_name: str):
         day_day = (today.day + time_cnt) % 31
         week_time = f"{day_month}/{day_day}"
         week_weather = main_data["daily"][time_cnt]["weather"][0]["icon"]  # 天気アイコン
-        week_max = week_data["daily"]["temperature_2m_max"][time_cnt]  # 最高気温
-        week_min = week_data["daily"]["temperature_2m_min"][time_cnt]  # 最低気温
+        week_max = round(week_data["daily"]["temperature_2m_max"][time_cnt])  # 最高気温
+        week_min = round(week_data["daily"]["temperature_2m_min"][time_cnt])  # 最低気温
         week_pre_sum = round(
             min(100, week_data["daily"]["precipitation_sum"][time_cnt] * 5)
         )  #  降水
