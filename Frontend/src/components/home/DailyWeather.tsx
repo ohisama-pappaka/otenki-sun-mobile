@@ -3,11 +3,16 @@ import { Image, Text, View } from "react-native";
 import { useTailwind } from "tailwind-rn";
 
 type Props = {
-  selectedCity: string;
+  selectedPrefectureName: string;
+  selectedCityName: string;
   weatherData: string[];
 };
 
-const DisplayWeatherCard = ({ selectedCity, weatherData }: Props) => {
+const DisplayWeatherCard = ({
+  selectedPrefectureName,
+  selectedCityName,
+  weatherData,
+}: Props) => {
   const tailwind = useTailwind();
 
   let weatherImage = "";
@@ -22,7 +27,10 @@ const DisplayWeatherCard = ({ selectedCity, weatherData }: Props) => {
 
   return (
     <View style={tailwind("h-52 rounded-md p-4 m-4")}>
-      <Text style={tailwind("text-center text-2xl")}>{selectedCity}</Text>
+      <Text style={tailwind("text-center text-2xl")}>
+        {selectedPrefectureName}
+        {selectedCityName}市
+      </Text>
       <Image
         style={tailwind("w-24 h-24 self-center")}
         source={{

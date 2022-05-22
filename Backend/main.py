@@ -1,4 +1,5 @@
 import os
+from unicodedata import name
 from fastapi import FastAPI
 from starlette.responses import FileResponse
 from requests.sessions import cookiejar_from_dict
@@ -136,8 +137,9 @@ def week(prefecture_name: str, city_name: str):
         week_weather = main_data["daily"][time_cnt]["weather"][0]["icon"]  # 天気アイコン
         week_max = week_data["daily"]["temperature_2m_max"][time_cnt]  # 最高気温
         week_min = week_data["daily"]["temperature_2m_min"][time_cnt]  # 最低気温
-        week_pre_sum = week_data["daily"]["precipitation_sum"][time_cnt]  # 　降水量
-
+        week_pre_sum = round(
+            min(100, week_data["daily"]["precipitation_sum"][time_cnt] * 5)
+        )  #  降水
         icon_url = f"http://openweathermap.org/img/w/{week_weather}.png"
         miner_data = [week_time, icon_url, week_max, week_min, week_pre_sum]
 
