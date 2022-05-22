@@ -15,9 +15,9 @@ import store from "src/store/store";
 const Stack = createStackNavigator();
 
 const App = () => (
-  // XXX: Error を出してるが解消方法がわからない。ただ普通に動く
-  <TailwindProvider utilities={utilities}>
-    <Provider store={store}>
+  <Provider store={store}>
+    {/* XXX: Error を出してるが解消方法がわからない。ただ普通に動く */}
+    <TailwindProvider utilities={utilities}>
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="Home"
@@ -52,8 +52,8 @@ const App = () => (
           />
         </Stack.Navigator>
       </NavigationContainer>
-    </Provider>
-  </TailwindProvider>
+    </TailwindProvider>
+  </Provider>
 );
 
 export default App;
