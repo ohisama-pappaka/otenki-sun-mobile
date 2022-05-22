@@ -53,10 +53,10 @@ const Confirmation = ({
                 )}
                 // XXX: 警告が出ていることは確認している
                 onPress={() => {
-                  const newCityName = selectedPrefecture + selectedCity;
                   dispatch({
                     type: "CHANGE_INPUT_TEXT",
-                    cityName: newCityName,
+                    prefectureName: selectedPrefecture,
+                    cityName: selectedCity,
                   });
                   navigation.navigate("Home");
                 }}
