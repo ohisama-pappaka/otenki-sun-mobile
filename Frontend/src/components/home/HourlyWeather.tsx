@@ -10,7 +10,7 @@ type Props = {
 const DisplayHourlyWeather = ({ weatherDataList }: Props) => {
   const tailwind = useTailwind();
 
-  const tableHead = ["時間", "天気", "気温(℃)", "降水確率(%)"];
+  const tableHead = ["時間", "天気", "気温(℃)", "降水確率"];
 
   let hourlyDataList: string[][] = [];
 

@@ -137,9 +137,10 @@ def week(prefecture_name: str, city_name: str):
         week_weather = main_data["daily"][time_cnt]["weather"][0]["icon"]  # 天気アイコン
         week_max = round(week_data["daily"]["temperature_2m_max"][time_cnt])  # 最高気温
         week_min = round(week_data["daily"]["temperature_2m_min"][time_cnt])  # 最低気温
-        week_pre_sum = round(
+        week_pre = round(
             min(100, week_data["daily"]["precipitation_sum"][time_cnt] * 10)
         )  #  降水
+        week_pre_sum = f"{week_pre}%"
         icon_url = f"http://openweathermap.org/img/w/{week_weather}.png"
         miner_data = [week_time, icon_url, week_max, week_min, week_pre_sum]
 

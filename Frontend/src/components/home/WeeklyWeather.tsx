@@ -36,7 +36,7 @@ const DisplayWeeklyWeather = () => {
     "天気",
     "最高気温(℃)",
     "最低気温(℃)",
-    "降水確率(%)",
+    "降水確率",
   ];
 
   return (

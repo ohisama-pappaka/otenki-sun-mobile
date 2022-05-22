@@ -91,7 +91,7 @@ cur.execute(
 )
 cur.execute('INSERT INTO "福岡県"(name,code,ex_name) values("福岡","400010","Fukuoka")')
 cur.execute('INSERT INTO "福岡県"(name,code,ex_name) values("八幡","400020","Yahata")')
-cur.execute('INSERT INTO "福岡県"(name,code,ex_name) values("飯塚","400030","Iiduka")')
+cur.execute('INSERT INTO "福岡県"(name,code,ex_name) values("飯塚","400030","Iizuka")')
 cur.execute('INSERT INTO "福岡県"(name,code,ex_name) values("久留米","400040","Kurume")')
 
 cur.execute(
