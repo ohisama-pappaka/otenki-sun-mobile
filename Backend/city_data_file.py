@@ -49,7 +49,11 @@ def FetchCityList(name: str):
     cur.execute("SELECT * FROM %s" % name)  # 県名から市のなまえを出力
     list = cur.fetchall()
     for i in range(0, data_sum):
-        city_list.append(list[i][1])
+        appendData = {
+            "label": list[i][1],
+            "value": list[i][1],
+        }
+        city_list.append(appendData)
 
     return city_list
 
