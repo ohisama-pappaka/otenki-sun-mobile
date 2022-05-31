@@ -1,8 +1,7 @@
-import os
+
 from fastapi import FastAPI
 from starlette.responses import FileResponse
 from requests.sessions import cookiejar_from_dict
-from dateutil import tz
 import numpy as np
 import datetime
 import src
@@ -14,7 +13,7 @@ load_dotenv()
 app = FastAPI()
 favicon_path = "favicon.ico"
 
-API_KEY = os.environ["API_KEY"]
+
 
 @app.get("/")
 def root():
