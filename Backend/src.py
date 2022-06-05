@@ -2,7 +2,9 @@ import requests
 import json
 from datetime import datetime
 import city_data_file
+import os
 
+API_KEY = os.environ["API_KEY"]
 def day_precipitation(time, cnt, weather_json):  # 降水確率求める
     if 0 <= time and time < 6:
         precipitation = weather_json["forecasts"][cnt]["chanceOfRain"]["T00_06"]
