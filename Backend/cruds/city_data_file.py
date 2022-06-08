@@ -116,16 +116,15 @@ cur.execute('INSERT INTO "栃木県"(name,code,ex_name) values("大田原","0900
 conn.commit()
 
 
-def FetchCityList(name: str):
+def fetch_city_list(prefecture_name: str):
     city_list = []
-    prefecture_name = name
     conn = sqlite3.connect(dbname)
     cur = conn.cursor()
-    cur.execute("SELECT count(*) FROM %s" % name)  # 件数検索
+    cur.execute("SELECT count(*) FROM %s" % prefecture_name)  # 件数検索
     list = cur.fetchall()
     data_sum = list[0][0]
 
-    cur.execute("SELECT * FROM %s" % name)  # 県名から市のなまえを出力
+    cur.execute("SELECT * FROM %s" % prefecture_name)  # 県名から市のなまえを出力
     list = cur.fetchall()
     for i in range(0, data_sum):
         appendData = {
@@ -137,11 +136,11 @@ def FetchCityList(name: str):
     return city_list
 
 
-def FetchCityData(name: str, name2: str):
+def fetch_city_data(prefecture_name: str, city_name: str):
     conn = sqlite3.connect(dbname)
     cur = conn.cursor()
     cur.execute(
-        "SELECT * FROM %s WHERE name= ? " % name, (name2,)
+        "SELECT * FROM %s WHERE name= ? " % prefecture_name, (city_name,)
     )  # 選ばれた市の名前からデータを持ってくる
     list = cur.fetchone()
 
