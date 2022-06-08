@@ -1,31 +1,21 @@
 import requests
-import json
-from datetime import datetime
-import city_data_file
+import datetime
+import cruds.city_data_file
 import os
+from dotenv import load_dotenv
 
+
+load_dotenv()
 API_KEY = os.environ["API_KEY"]
-def day_precipitation(time, cnt, weather_json):  # 降水確率求める
-    if 0 <= time and time < 6:
-        precipitation = weather_json["forecasts"][cnt]["chanceOfRain"]["T00_06"]
-    elif 6 <= time and time < 12:
-        precipitation = weather_json["forecasts"][cnt]["chanceOfRain"]["T06_12"]
-    elif 12 <= time and time < 18:
-        precipitation = weather_json["forecasts"][cnt]["chanceOfRain"]["T12_18"]
-    else:
-        precipitation = weather_json["forecasts"][cnt]["chanceOfRain"]["T18_24"]
-    return format(precipitation)
 
-def api_set(prefecture_name: str, city_name: str):
-    id, city_name = city_data_file.FetchCityData(prefecture_name, city_name)
+
+def weekly_api_set(prefecture_name: str, city_name: str):
+    id, city_name = cruds.city_data_file.fetch_city_data(prefecture_name, city_name)
     city_api = "http://api.openweathermap.org/data/2.5/weather?units=metric&q={city}&APPID={key}"  # 都市名から、座標を求めるAPI
-    pre_api = f"https://weather.tsukumijima.net/api/forecast/city/{id}"  # 降水確率を求める
     local_url = city_api.format(city=city_name, key=API_KEY)
 
     city_response = requests.get(local_url)
-    pre_response = requests.get(pre_api)
     city_data = city_response.json()
-    precipitation_json = pre_response.json()
 
     lat = city_data["coord"]["lat"]  # 座標獲得
     lon = city_data["coord"]["lon"]  # 座標獲得
@@ -41,6 +31,5 @@ def api_set(prefecture_name: str, city_name: str):
     hourly_json = hourly_response.json()
     weekly_response = requests.get(weekly_api)
     weekly_json = weekly_response.json()
-    date = datetime.datetime.now()
 
-    return precipitation_json, hourly_json, weekly_json, date
+    return hourly_json, weekly_json

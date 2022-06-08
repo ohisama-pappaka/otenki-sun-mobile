@@ -1,18 +1,18 @@
-
 from fastapi import FastAPI
 from starlette.responses import FileResponse
 from requests.sessions import cookiejar_from_dict
 import numpy as np
 import datetime
-import src
-import city_data_file
+import cruds.weekly_api_set as weekly_api_set
+import cruds.hourly_api_set as hourly_api_set
+import cruds.day_precipitation as day_precipitation
+import cruds.city_data_file as city_data_file
 from dotenv import load_dotenv
 
 load_dotenv()
 
 app = FastAPI()
 favicon_path = "favicon.ico"
-
 
 
 @app.get("/")
@@ -27,13 +27,13 @@ async def favicon():
 
 @app.get("/city/{name}")
 def root(name: str):
-    main_list = city_data_file.FetchCityList(name)
+    main_list = city_data_file.fetch_city_list(name)
     return main_list
 
 
 @app.get("/daily/{prefecture_name}/{city_name}")
 def day(prefecture_name: str, city_name: str):
-    weather_json, hourly_input_data, week_data, date = src.api_set(
+    precipitation_data, hourly_input_data, date = hourly_api_set.api_set(
         prefecture_name, city_name
     )
     hourly_output_data = []
@@ -47,8 +47,8 @@ def day(prefecture_name: str, city_name: str):
         hourly_hours = f"{hourly_time}/{(date.hour + time_cnt) % 24 }:00"  # 時間
         hourly_weather = hourly_input_data["hourly"][time_cnt]["weather"][0][
             "icon"
-        ]  # 　天気情報
-        hourly_temp = round(hourly_input_data["hourly"][time_cnt]["temp"])  # 　気温
+        ]  # 天気情報
+        hourly_temperature = round(hourly_input_data["hourly"][time_cnt]["temp"])  #  気温
         hourly_humidity = hourly_input_data["hourly"][time_cnt]["humidity"]  # 湿度
         extra_time = date.hour + time_cnt
         cnt = 0
@@ -58,7 +58,9 @@ def day(prefecture_name: str, city_name: str):
         elif extra_time > 48:  # 時間が48を超えた時0にリセット
             cnt = 2
             extra_time = date.hour + time_cnt - 48
-        hourly_pre = src.day_precipitation(extra_time, cnt, weather_json)  # 降水確率
+        hourly_pre = day_precipitation.day_precipitation(
+            extra_time, cnt, precipitation_data
+        )  # 降水確率
 
         icon_url = f"http://openweathermap.org/img/w/{hourly_weather}.png"
 
@@ -66,11 +68,11 @@ def day(prefecture_name: str, city_name: str):
             hourly_time,
             hourly_hours,
             icon_url,
-            hourly_temp,
+            hourly_temperature,
             hourly_humidity,
             hourly_pre,
         ]
-        #   日付、時刻（時のみ）、天候のアイコンURL、気温、湿度、降水確率で出力
+        # 日付、時刻（時のみ）、天候のアイコンURL、気温、湿度、降水確率で出力
 
         hourly_output_data.append(hourly_data)
 
@@ -80,13 +82,12 @@ def day(prefecture_name: str, city_name: str):
 @app.get("/weekly/{prefecture_name}/{city_name}")
 def week(prefecture_name: str, city_name: str):
     today = datetime.date.today()
-    weather_json, weekly_input_data, week_data, date = src.api_set(
+    weekly_input_data, week_data = weekly_api_set.weekly_api_set(
         prefecture_name, city_name
     )
     weekly_output_data = []
     for time_cnt in range(0, 6):
 
-        day_after = datetime.timedelta(days=time_cnt)
         day_month = today.month
         day_day = (today.day + time_cnt) % 31
         week_time = f"{day_month}/{day_day}"
@@ -102,6 +103,6 @@ def week(prefecture_name: str, city_name: str):
         icon_url = f"http://openweathermap.org/img/w/{week_weather}.png"
         weekly_data = [week_time, icon_url, week_max, week_min, week_pre_sum]
 
-        weekly_data.append(weekly_data)
+        weekly_output_data.append(weekly_data)
 
     return weekly_output_data
