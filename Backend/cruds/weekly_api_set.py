@@ -28,8 +28,8 @@ def weekly_api_set(prefecture_name: str, city_name: str):
     hourly_url = hourly_api.format(city_lat=lat, city_lon=lon, key=API_KEY)
 
     hourly_response = requests.get(hourly_url)
-    hourly_json = hourly_response.json()
+    hourly_weather_data = hourly_response.json()
     weekly_response = requests.get(weekly_api)
-    weekly_json = weekly_response.json()
+    weekly_weather_data = weekly_response.json()
 
-    return hourly_json, weekly_json
+    return hourly_weather_data, weekly_weather_data

@@ -1,7 +1,5 @@
 from fastapi import FastAPI
 from starlette.responses import FileResponse
-from requests.sessions import cookiejar_from_dict
-import numpy as np
 import datetime
 import cruds.weekly_api_set as weekly_api_set
 import cruds.hourly_api_set as hourly_api_set
@@ -82,16 +80,16 @@ def day(prefecture_name: str, city_name: str):
 @app.get("/weekly/{prefecture_name}/{city_name}")
 def week(prefecture_name: str, city_name: str):
     today = datetime.date.today()
-    weekly_input_data, week_data = weekly_api_set.weekly_api_set(
+    weekly_weather_data, week_data = weekly_api_set.weekly_api_set(
         prefecture_name, city_name
     )
     weekly_output_data = []
     for time_cnt in range(0, 6):
 
-        day_month = today.month
-        day_day = (today.day + time_cnt) % 31
-        week_time = f"{day_month}/{day_day}"
-        week_weather = weekly_input_data["daily"][time_cnt]["weather"][0][
+        month_date = today.month
+        day_date = (today.day + time_cnt) % 31
+        week_time = f"{month_date}/{day_date}"
+        icon_path = weekly_weather_data["daily"][time_cnt]["weather"][0][
             "icon"
         ]  # 天気アイコン
         week_max = round(week_data["daily"]["temperature_2m_max"][time_cnt])  # 最高気温
@@ -100,7 +98,7 @@ def week(prefecture_name: str, city_name: str):
             min(100, week_data["daily"]["precipitation_sum"][time_cnt] * 10)
         )  #  降水
         week_pre_sum = f"{week_pre}%"
-        icon_url = f"http://openweathermap.org/img/w/{week_weather}.png"
+        icon_url = f"http://openweathermap.org/img/w/{icon_path}.png"
         weekly_data = [week_time, icon_url, week_max, week_min, week_pre_sum]
 
         weekly_output_data.append(weekly_data)
